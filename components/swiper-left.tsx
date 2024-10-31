@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
-import { Col, Row } from "antd";
 
 SwiperCore.use([Autoplay]);
 
