@@ -4,7 +4,7 @@ import React from "react";
 import { RiMenu3Line } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
 
-function MainHeader() {
+function Header() {
   return (
     <header
       className={
@@ -14,7 +14,11 @@ function MainHeader() {
       <img src="/logo.png" alt="" width={150} height={80} />
       <div className={"flex justify-center items-center gap-10"}>
         <div>
-          <ul className={"flex items-center space-x-10 font-bold text-xl"}>
+          <ul
+            className={
+              "flex items-center space-x-10 font-bold text-white text-xl"
+            }
+          >
             <li>
               <a href="">Home</a>
             </li>
@@ -58,4 +62,4 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default Header;

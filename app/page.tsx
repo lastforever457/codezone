@@ -1,11 +1,13 @@
-import MainHeader from "@/components/main-header";
+import Header from "@/components/header";
 import Section from "@/components/main/section";
+import SwiperLeft from "@/components/swiper-left";
 
 const Page = () => {
   return (
     <div>
-      <MainHeader />
+      <Header />
       <Section />
+      <SwiperLeft />
     </div>
   );
 };
