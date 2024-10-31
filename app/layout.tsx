@@ -1,5 +1,6 @@
-import "./globals.css";
-import {ReactNode} from "react";
+import './globals.css';
+import { ReactNode } from 'react';
+import { ConfigProvider } from 'antd';
 
 export default function RootLayout({
   children,
@@ -8,10 +9,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-        {children}
+      <body className={`antialiased`}>
+        <ConfigProvider>{children}</ConfigProvider>
       </body>
     </html>
   );
