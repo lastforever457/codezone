@@ -1,13 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
 import { RiMenu3Line } from 'react-icons/ri';
 import useScroll from '@/hooks/use-scroll';
+import { FaSearch } from 'react-icons/fa';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import { Button, Drawer, Dropdown, Space } from 'antd';
 import { IoIosArrowDown } from 'react-icons/io';
-import Link from 'next/link';
 
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -58,6 +58,7 @@ function Header() {
           <FaSearch size={20} />
         </button>
         <Button
+          onClick={isCollapsed ? () => setIsCollapsed(false) : undefined}
           type="primary"
           className={
             'hidden md:flex w-[10vw] rounded-none text-white h-[98px] flex items-center'
@@ -66,13 +67,6 @@ function Header() {
           <RiMenu3Line size={20} />
           <span className={'ml-2'}>Menu</span>
         </Button>
-        <button
-          className={
-            'h-[100px] w-[70px] text-2xl flex justify-center items-center text-white  py-3'
-          }
-        >
-          <RiMenu3Line />
-        </button>
       </div>
       <Drawer></Drawer>
     </header>
