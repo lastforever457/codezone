@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import SwiperCore from "swiper";
-import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import SwiperCore from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 SwiperCore.use([Autoplay]);
 
 export default function SwiperLeft() {
   return (
-    <div className={"bg-[#020626] py-10 px-10"}>
+    <div className={'bg-[#020626] py-10 px-10 h-[350px]'}>
       <Swiper
         className=""
         autoplay={{
@@ -42,60 +42,60 @@ export default function SwiperLeft() {
           },
         }}
       >
-        <SwiperSlide className={"h-[50px]"}>
+        <SwiperSlide className={'h-[50px]'}>
           <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
             <img
               height={70}
               className={
-                " rounded bg-center bg-contain object-contain transition-all"
+                ' rounded bg-center bg-contain object-contain transition-all'
               }
               src="/picture-1.png"
               alt="Image 1"
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className={"hover:scale-110"}>
+        <SwiperSlide className={'hover:scale-110'}>
           <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
             <img
               height={70}
               className={
-                "max-w-[100%]  rounded bg-center bg-contain object-contain transition-all"
+                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
               }
               src="/picture-3.png"
               alt="Image 1"
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className={"hover:scale-110"}>
+        <SwiperSlide className={'hover:scale-110'}>
           <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
             <img
               height={70}
               className={
-                "max-w-[100%]  rounded bg-center bg-contain object-contain transition-all"
+                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
               }
               src="/picture-4.png"
               alt="Image 1"
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className={"hover:scale-110"}>
+        <SwiperSlide className={'hover:scale-110'}>
           <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
             <img
               height={70}
               className={
-                "max-w-[100%]  rounded bg-center bg-contain object-contain transition-all"
+                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
               }
               src="/picture-5.png"
               alt="Image 1"
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className={"hover:scale-110"}>
+        <SwiperSlide className={'hover:scale-110'}>
           <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
             <img
               height={70}
               className={
-                "max-w-[100%]  rounded bg-center bg-contain object-contain transition-all"
+                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
               }
               src="/picture-6.png"
               alt="Image 1"

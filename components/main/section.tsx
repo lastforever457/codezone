@@ -37,9 +37,7 @@ function Section() {
             </div>
           </div>
         </Col>
-        <Col span={12} className={'h-full'}>
-          davsd
-        </Col>
+        <Col span={12} className={'h-full'}></Col>
       </Row>
     </div>
   );
