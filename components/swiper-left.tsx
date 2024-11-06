@@ -5,9 +5,8 @@ import 'swiper/css';
 import SwiperCore from 'swiper';
 import { Autoplay } from 'swiper/modules';
 
-SwiperCore.use([Autoplay]);
-
 export default function SwiperLeft() {
+  SwiperCore.use([Autoplay]);
   return (
     <div className={'bg-[#020626] py-10 px-10 h-[350px]'}>
       <Swiper
