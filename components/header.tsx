@@ -128,14 +128,14 @@
 
 'use client';
 
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { RiMenu3Line } from 'react-icons/ri';
-import useScroll from '@/hooks/use-scroll';
-import { FaSearch } from 'react-icons/fa';
 import useHeaderMenus from '@/hooks/use-header-menus';
+import useScroll from '@/hooks/use-scroll';
 import { Button, Drawer, Dropdown, Space } from 'antd';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
+import { RiMenu3Line } from 'react-icons/ri';
 
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState(false);
