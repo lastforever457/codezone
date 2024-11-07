@@ -1,14 +1,21 @@
 'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { useMemo } from 'react';
 import SwiperCore from 'swiper';
+import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function SwiperLeft() {
+const SwiperLeft = () => {
+  const images = useMemo(() => [1, 3, 4, 5, 6], []);
   SwiperCore.use([Autoplay]);
   return (
-    <div className={'bg-[#020626] py-10 px-10 h-[350px]'}>
+    <div
+      className={
+        'bg-[#020626] py-20 px-72 h-[350px] bg-center bg-contain object-contain'
+      }
+      style={{ backgroundImage: `url("/pattern.png")` }}
+    >
       <Swiper
         className=""
         autoplay={{
@@ -41,67 +48,21 @@ export default function SwiperLeft() {
           },
         }}
       >
-        <SwiperSlide className={'h-[50px]'}>
-          <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-            <img
-              height={70}
-              className={
-                ' rounded bg-center bg-contain object-contain transition-all'
-              }
-              src="/picture-1.png"
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={'hover:scale-110'}>
-          <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-            <img
-              height={70}
-              className={
-                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
-              }
-              src="/picture-3.png"
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={'hover:scale-110'}>
-          <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-            <img
-              height={70}
-              className={
-                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
-              }
-              src="/picture-4.png"
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={'hover:scale-110'}>
-          <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-            <img
-              height={70}
-              className={
-                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
-              }
-              src="/picture-5.png"
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={'hover:scale-110'}>
-          <div className="hover:scale-110 cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-            <img
-              height={70}
-              className={
-                'max-w-[100%]  rounded bg-center bg-contain object-contain transition-all'
-              }
-              src="/picture-6.png"
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
+        {images.map((img: number, index: number) => (
+          <SwiperSlide className={'h-[50px]'} key={index}>
+            <div className="cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
+              <img
+                height={40}
+                className={'bg-center bg-contain object-contain transition-all'}
+                src={`/picture-${img}.png`}
+                alt="Image"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
-}
+};
+
+export default SwiperLeft;

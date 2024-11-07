@@ -1,13 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
-import {
-  FaAngleRight,
-  FaFacebook,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
+import { useState } from 'react';
+import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 function TeamComponent() {
   const teamMembers = [
@@ -48,7 +43,7 @@ function TeamComponent() {
   );
 
   return (
-    <div className="px-16 py-16 mb-14" data-aos="zoom-in-down">
+    <div className="px-72 py-16 mb-14">
       <h4 className="text-xl text-center text-blue-500 font-bold">
         Meet Our Team
       </h4>
@@ -60,12 +55,11 @@ function TeamComponent() {
           <div className="mt-8 space-y-6">
             {teamMembers.map((member, index) => (
               <div
-                onClick={() => handleHighlight(member)}
+                onMouseEnter={() => handleHighlight(member)}
                 key={member.id}
-                className={`flex items-center space-x-4 p-4 rounded cursor-pointer ${
-                  highlightedMember.id === member.id
-                    ? 'border-b-2 border-b-blue-600 shadow-lg'
-                    : 'hover:border-b-2 hover:border-b-blue-600 shadow py-3 px-5'
+                className={`flex items-center space-x-4 p-4 rounded border-b-2 cursor-pointer ${
+                  highlightedMember.id === member.id &&
+                  'hover:border-b-black hover:underline'
                 }`}
               >
                 <span className="text-blue-500 font-bold text-xl">
@@ -75,20 +69,20 @@ function TeamComponent() {
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-gray-500">{member.role}</p>
                 </div>
-                <button className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 transition duration-300">
-                  <FaAngleRight />
+                <button className="bg-[#D2A98E] p-2 rounded-full text-white hover:bg-gray-400 transition duration-300">
+                  <LuArrowUpRight />
                 </button>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-8 lg:items-start">
+        <div className="flex items-center transition-all justify-center gap-8 lg:items-start">
           <div>
             <img
               src={highlightedMember.image}
               alt={highlightedMember.name}
-              className="w-[400px] h-[380px] rounded-md shadow-lg object-cover mb-4"
+              className="w-[400px] h-[380px] rounded-md transition-all shadow-lg object-cover mb-4"
             />
             <h3 className="text-2xl font-semibold">{highlightedMember.name}</h3>
             <p className="text-gray-500 mb-6">{highlightedMember.role}</p>
