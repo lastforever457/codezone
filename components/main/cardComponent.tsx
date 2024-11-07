@@ -4,7 +4,7 @@ import { FaUsers, FaUsersSlash } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { MdSettingsBrightness } from 'react-icons/md';
 
-function Card() {
+function CardComponent() {
   return (
     <div className={'px-16 py-16'}>
       <div className={'mt-[-230px] mb-24 flex justify-center gap-10'}>
@@ -137,8 +137,24 @@ function Card() {
           </div>
         </div>
       </div>
+      {/*<div className="relative group w-80 p-4">*/}
+      {/*  <Card className="overflow-hidden rounded-lg shadow-lg">*/}
+      {/*    <div className="p-6">*/}
+      {/*      <div className="text-blue-600 text-3xl mb-4">💰</div>*/}
+      {/*      <h2 className="text-xl font-semibold mb-2">Cost-effectiveness</h2>*/}
+      {/*      <p className="text-gray-600">*/}
+      {/*        We offer IT Solutions that help you reduce costs and improve.*/}
+      {/*      </p>*/}
+      {/*      <button className="mt-4 p-2 px-4 bg-transparent text-blue-600 border border-blue-600 rounded">*/}
+      {/*        Read More*/}
+      {/*      </button>*/}
+      {/*    </div>*/}
+      {/*  </Card>*/}
+
+      {/*  <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-500 transition-all duration-500 ease-in-out transform group-hover:h-full opacity-10 group-hover:opacity-30" />*/}
+      {/*</div>*/}
     </div>
   );
 }
 
-export default Card;
+export default CardComponent;
