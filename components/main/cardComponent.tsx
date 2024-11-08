@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, Col, Row } from 'antd';
 import { useMemo } from 'react';
 import { FaUsers, FaUsersSlash } from 'react-icons/fa';
