@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const SwiperLeft = () => {
   const images = useMemo(() => [1, 3, 4, 5, 6], []);
+  const doubleImages = useMemo(() => [...images, ...images], []);
   SwiperCore.use([Autoplay]);
   return (
     <div
@@ -24,7 +25,7 @@ const SwiperLeft = () => {
         }}
         speed={3000}
         loop={true}
-        slidesPerView={1}
+        slidesPerView={5}
         breakpoints={{
           640: {
             slidesPerView: 1,
