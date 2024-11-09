@@ -1,14 +1,10 @@
 'use client';
 
-import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Row } from 'antd';
-import { useMemo } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const MainSection = () => {
-  const breakpoint = useBreakpoint();
-  const minScreens = useMemo(() => ['xs', 'sm', 'md'], []);
   return (
     <div
       className={
