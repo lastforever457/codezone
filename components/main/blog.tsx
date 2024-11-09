@@ -29,7 +29,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="py-16 px-72" data-aos="fade-right">
+    <div className="py-16 px-5 lg:px-72" data-aos="fade-right">
       <div className={'text-center'}>
         <h4 className="text-blue-500 text-xl font-bold">Latest News & Blog</h4>
         <h2 className="text-4xl font-bold mt-4 mb-14">
@@ -62,11 +62,8 @@ const Blog = () => {
             {blogPosts
               .slice(1)
               .map((post: Record<string, any>, index: number) => (
-                <>
-                  <div
-                    key={post.id}
-                    className="flex px-10 items-center justify-between w-full"
-                  >
+                <div key={index}>
+                  <div className="flex px-10 items-center justify-between w-full">
                     <Row>
                       <Col span={18}>
                         <div
@@ -98,7 +95,7 @@ const Blog = () => {
                   {index !== blogPosts.slice(1).length - 1 && (
                     <Divider style={{ margin: '24px 0' }} />
                   )}
-                </>
+                </div>
               ))}
           </Col>
         </Row>

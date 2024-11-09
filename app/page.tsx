@@ -3,8 +3,8 @@
 import Header from '@/components/header';
 import Blog from '@/components/main/blog';
 import CardComponent from '@/components/main/cardComponent';
+import MainSection from '@/components/main/main-section';
 import Provide from '@/components/main/provide';
-import Section from '@/components/main/section';
 import Service from '@/components/main/service';
 import SwiperLeft from '@/components/main/swiper-left';
 import TeamComponent from '@/components/main/team';
@@ -19,7 +19,7 @@ const Page = () => {
   return (
     <div>
       <Header />
-      <Section />
+      <MainSection />
       <SwiperLeft />
       <CardComponent />
       <Service />

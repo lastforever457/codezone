@@ -13,7 +13,7 @@ const SwiperLeft = () => {
   return (
     <div
       className={
-        'bg-[#020626] py-20 px-72 h-[350px] bg-center bg-contain object-contain'
+        'bg-[#020626] py-14 lg:py-20 lg:px-72 h-[350px] bg-center bg-contain object-contain'
       }
       style={{ backgroundImage: `url("/pattern.png")` }}
     >
@@ -25,11 +25,11 @@ const SwiperLeft = () => {
         }}
         speed={3000}
         loop={true}
-        slidesPerView={5}
+        slidesPerView={2}
         breakpoints={{
           640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            spaceBetween: 40,
           },
           768: {
             slidesPerView: 2,
@@ -50,15 +50,15 @@ const SwiperLeft = () => {
         }}
       >
         {doubleImages.map((img: number, index: number) => (
-          <SwiperSlide className={'h-[50px]'} key={index}>
-            <div className="cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
-              <img
-                height={40}
-                className={'bg-center bg-contain object-contain transition-all'}
-                src={`/picture-${img}.png`}
-                alt="Image"
-              />
-            </div>
+          <SwiperSlide key={index}>
+            <img
+              height={40}
+              className={
+                'bg-center bg-contain object-contain px-5 transition-all'
+              }
+              src={`/picture-${img}.png`}
+              alt="Image"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

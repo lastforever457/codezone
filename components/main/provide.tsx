@@ -40,20 +40,20 @@ const Provide = () => {
     []
   );
   return (
-    <div className="py-16 px-72">
+    <div className="py-16 px-5 lg:px-72">
       <div className={'text-center'}>
         <h4 className="text-blue-500 text-xl font-bold">What We Provide</h4>
         <h2 className="text-4xl font-bold mt-4 mb-14">
           We Run all kinds of IT services that vow your success
         </h2>
       </div>
-      <div className="flex gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {services.map((service: Record<string, any>, index: number) => (
           <div
             key={index}
-            className="bg-white transition-all hover:bg-blue-600 hover:text-white rounded-[7vw] shadow-xl px-6 py-20 w-64 text-center"
+            className="bg-white transition-all hover:bg-blue-600 hover:text-white rounded-[25vw] lg:rounded-[7vw] shadow-2xl lg:shadow-xl px-6 py-14 lg:py-20 text-center"
           >
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-3">
               <div className="text-4xl">{service.icon}</div>
             </div>
             <h2 className="text-lg font-semibold h-24 text-center flex justify-center items-center">
@@ -68,9 +68,9 @@ const Provide = () => {
                 className="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 13l4 4L19 7"
                 />
               </svg>

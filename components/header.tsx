@@ -1,10 +1,11 @@
 'use client';
 
+import useBreakpoint from '@/hooks/use-breakpoint';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import useScroll from '@/hooks/use-scroll';
-import { Button, Drawer, Dropdown, Space } from 'antd';
+import { Button, Drawer, Dropdown, Menu, Space } from 'antd';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { FaFacebook, FaSearch } from 'react-icons/fa';
 import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -13,8 +14,10 @@ import { RiMenu3Line } from 'react-icons/ri';
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+  const [openSm, setOpenSm] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const { menus } = useHeaderMenus();
+  const breakpoint = useBreakpoint();
 
   useEffect(() => {
     if (scrollY > window.innerHeight * 0.2) {
@@ -23,6 +26,22 @@ function Header() {
       setIsCollapsed(false);
     }
   }, [scrollY]);
+  const screens = useMemo(() => ['xs', 'sm', 'md'], []);
+
+  const menuItems = useMemo(() => {
+    return menus.map((menu: Record<string, any>) => {
+      return {
+        key: menu.key,
+        label: <span>{menu.name}</span>,
+        children: menu.children
+          ? menu.children.map((child: Record<string, any>) => ({
+              key: child.link,
+              label: <Link href={child.link}>{child.name}</Link>,
+            }))
+          : [],
+      };
+    });
+  }, [menus]);
 
   return (
     <>
@@ -32,12 +51,15 @@ function Header() {
         } transition-all bg-cover bg-center`}
         style={{ zIndex: 50, borderBottom: '1px solid #999' }}
       >
-        <div className="w-full h-full flex justify-between items-center pl-10">
-          <img src="/logo.png" alt="" width={150} height={80} />
+        <div className="w-full h-full flex justify-between items-center pl-5 md:pl-10">
+          <img
+            src="/logo.png"
+            alt=""
+            width={screens.includes(breakpoint) ? 120 : 150}
+            height={80}
+          />
           <div
-            className={`hidden md:flex gap-10 h-full ${
-              isCollapsed ? 'bg-black text-white' : 'bg-white text-black'
-            } px-16 text-lg justify-center items-center`}
+            className={`hidden md:flex gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
           >
             {menus.map((menu: Record<string, any>, index: number) =>
               menu.children ? (
@@ -64,20 +86,26 @@ function Header() {
             <button
               style={{ borderLeft: '1px solid #999' }}
               className={
-                'h-full w-[100px] flex justify-center items-center text-white p-0 m-0'
+                'h-full w-[90px] lg:w-[100px] flex justify-center items-center text-white p-0 m-0'
               }
             >
               <FaSearch size={20} />
             </button>
             <Button
-              onClick={() => setOpen(true)}
-              type="primary"
+              onClick={() => {
+                if (screens.includes(breakpoint)) {
+                  setOpenSm(true);
+                } else {
+                  setOpen(true);
+                }
+              }}
+              type={screens.includes(breakpoint) ? 'text' : 'primary'}
               className={
-                'hidden md:flex w-[10vw] rounded-none text-white h-full items-center'
+                'flex lg:w-[10vw] rounded-none text-white h-full items-center'
               }
             >
-              <RiMenu3Line size={20} />
-              <span className={'ml-2'}>Menu</span>
+              <RiMenu3Line className="text-2xl" />
+              <p className={'ml-2  hidden lg:block'}>Menu</p>
             </Button>
           </div>
         </div>
@@ -127,7 +155,7 @@ function Header() {
             <p>support@gmail.com</p>
             <p>+880 (123) 456 88</p>
           </div>
-          <div className="flex flex-col mt-10">
+          <div className="flex flex-col mt-10 pl-5">
             <p className="font-bold text-lg">Follow Us</p>
             <div className="flex gap-3 mt-3">
               <Button
@@ -160,6 +188,15 @@ function Header() {
               </Button>
             </div>
           </div>
+        </Drawer>
+        <Drawer
+          title={<img width={150} src="/logo.png" />}
+          className={'custom-drawer'}
+          placement="left"
+          onClose={() => setOpenSm(false)}
+          open={openSm}
+        >
+          <Menu theme="dark" mode="inline" items={menuItems} />
         </Drawer>
       </header>
     </>

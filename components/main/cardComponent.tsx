@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, Col, Row } from 'antd';
+import useBreakpoint from '@/hooks/use-breakpoint';
+import { Button, Col, Divider, Row } from 'antd';
 import { useMemo } from 'react';
 import { FaUsers, FaUsersSlash } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
@@ -9,6 +10,8 @@ import { MdSettingsBrightness } from 'react-icons/md';
 import { TiTick } from 'react-icons/ti';
 
 function CardComponent() {
+  const breakpoint = useBreakpoint();
+  const maxScreens = useMemo(() => ['lg', 'xl'], []);
   const cards = useMemo(
     () => [
       {
@@ -37,14 +40,14 @@ function CardComponent() {
   );
 
   return (
-    <div className={'px-72 py-20'}>
-      <div className={'mt-[-230px] mb-24 flex justify-between'}>
+    <div className={'px-5 lg:px-72 pt-20 pb-0'}>
+      <div className={'mt-[-270px] lg:mt-[-230px] mb-24 flex justify-between'}>
         <Row gutter={[20, 20]}>
           {cards.map((card: Record<string, any>, index: number) => (
             <Col xs={24} sm={24} md={12} lg={8} key={index}>
               <div
                 className={
-                  'bg-white rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 h-[350px] hover:bg-blue-500 hover:text-white hover:border-b-white flex flex-col justify-center items-start'
+                  'bg-white shadow-xl lg:shadow-none rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 h-[350px] hover:bg-blue-500 hover:text-white hover:border-b-white flex flex-col justify-center items-start'
                 }
               >
                 <span className="text-blue-600">{card.icon}</span>
@@ -65,7 +68,7 @@ function CardComponent() {
         </Row>
       </div>
       <div className={'mt-20 flex justify-center gap-14'}>
-        <Row gutter={[20, 20]}>
+        <Row gutter={[20, 0]}>
           <Col xs={24} sm={24} md={12} lg={8}>
             <div className="relative overflow-hidden rounded-full">
               <img
@@ -76,13 +79,18 @@ function CardComponent() {
             </div>
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
-            <div className="flex justify-center items-center w-full h-full pl-5">
+            <div className="flex lg:justify-center items-center w-full h-full lg:pl-5">
               <div className="p-2 flex flex-col justify-between items-start">
-                <h4 className={'font-bold mt-16 mb-5 text-2xl text-blue-500'}>
+                <h4
+                  className={
+                    'font-bold mt-16 mb-2 lg:mb-5 text-lg lg:text-2xl text-blue-500'
+                  }
+                >
                   About Company
                 </h4>
-                <h2 className={'text-4xl font-bold mb-3'}>
-                  Make your life <br /> easier with help from{' '}
+                <h2 className={'text-xl lg:text-4xl font-bold mb-3'}>
+                  Make your life {maxScreens.includes(breakpoint) && <br />}{' '}
+                  easier with help from{' '}
                   <span className="text-blue-600">Wiatech</span>
                 </h2>
                 <br />
@@ -127,7 +135,11 @@ function CardComponent() {
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
             <div className={''}>
-              <h1 className={'text-2xl mt-16 mb-5 font-bold'}>
+              <h1
+                className={
+                  'pr-5 text-xl lg:text-2xl mt-10 lg:mt-16 mb-5 font-bold'
+                }
+              >
                 We’ve 25+ Years Of Experience In Tech Services
               </h1>
               <span className={'text-gray-500 mt-5 text-md text-justify'}>
@@ -135,7 +147,12 @@ function CardComponent() {
                 accusantium doloremque laudantium totam rem aperiam, eaque epsa
                 inventore
               </span>
-              <div className={'flex justify-between items-center mt-28'}>
+              <Divider className={'my-5 lg:my-14'} />
+              <div
+                className={
+                  'flex gap-5 lg:gap-0 justify-start lg:justify-between items-center'
+                }
+              >
                 <div>
                   <FaUsers size={50} className={'text-blue-600'} />
                   <h3 className={'text-5xl font-bold mb-3'}>56k+</h3>

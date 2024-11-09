@@ -14,3 +14,15 @@
 ::-webkit-scrollbar-button {
   height: 10px;
 }
+
+.custom-drawer .ant-drawer-header {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.custom-drawer .ant-drawer-body {
+  background-color: #121212;
+  color: #f0f0f0;
+}
