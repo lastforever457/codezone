@@ -1,6 +1,12 @@
-import { Col, Divider, Row } from 'antd';
+import useBreakpoint from '@/hooks/use-breakpoint';
+import { Button, Card, Col, Divider, Row } from 'antd';
+import Link from 'next/link';
+import { useMemo } from 'react';
+import { MdChevronRight } from 'react-icons/md';
 
 const Blog = () => {
+  const breakpoint = useBreakpoint();
+  const bigScreens = useMemo(() => ['lg', 'xl', '2xl'], []);
   const blogPosts = [
     {
       id: 1,
@@ -38,10 +44,10 @@ const Blog = () => {
       </div>
 
       <div className="mt-10">
-        <Row>
-          <Col span={12}>
+        <Row gutter={[16, 26]}>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <div
-              className={`w-full h-full`}
+              className={`w-full h-[350px] md:h-full`}
               style={{ backgroundImage: `url(/group-team.png)` }}
             >
               <div className="absolute bottom-0 left-0 p-6 bg-black bg-opacity-25 text-white rounded-b-lg">
@@ -58,40 +64,57 @@ const Blog = () => {
               </div>
             </div>
           </Col>
-          <Col span={12}>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             {blogPosts
               .slice(1)
               .map((post: Record<string, any>, index: number) => (
                 <div key={index}>
-                  <div className="flex px-10 items-center justify-between w-full">
-                    <Row>
-                      <Col span={18}>
-                        <div
-                          className={
-                            'hover:underline hover:text-blue-500 cursor-pointer '
-                          }
-                        >
-                          <p className="text-sm text-gray-500">{post.date}</p>
-                          <h3 className="text-lg font-semibold">
-                            {post.title}
-                          </h3>
-                        </div>
-                        <a
-                          href="#"
-                          className=" cursor-pointer text-gray-500 hover:text-blue-500 hover:underline mt-1 inline-block text-md"
+                  {bigScreens.includes(breakpoint) ? (
+                    <div className="flex lg:px-10 items-center justify-between w-full">
+                      <Row>
+                        <Col span={18}>
+                          <div
+                            className={
+                              'hover:underline hover:text-blue-500 cursor-pointer '
+                            }
+                          >
+                            <p className="text-sm text-gray-500">{post.date}</p>
+                            <h3 className="text-lg font-semibold">
+                              {post.title}
+                            </h3>
+                          </div>
+                          <a
+                            href="#"
+                            className=" cursor-pointer text-gray-500 hover:text-blue-500 hover:underline mt-1 inline-block text-md"
+                          >
+                            Read More
+                          </a>
+                        </Col>
+                        <Col span={6}>
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-[180px]  rounded-lg object-cover me-40"
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                  ) : (
+                    <Card cover={<img alt="example" src={post.image} />}>
+                      <p className="text-[#888] mb-2">{post.date}</p>
+                      <Card.Meta title={post.title} />
+                      <Link href={'/'}>
+                        <Button
+                          icon={<MdChevronRight />}
+                          iconPosition="end"
+                          type="link"
+                          className="p-0"
                         >
                           Read More
-                        </a>
-                      </Col>
-                      <Col span={6}>
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-[180px]  rounded-lg object-cover me-40"
-                        />
-                      </Col>
-                    </Row>
-                  </div>
+                        </Button>
+                      </Link>
+                    </Card>
+                  )}
                   {index !== blogPosts.slice(1).length - 1 && (
                     <Divider style={{ margin: '24px 0' }} />
                   )}
