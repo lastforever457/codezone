@@ -49,7 +49,7 @@ const SwiperLeft = () => {
           },
         }}
       >
-        {images.map((img: number, index: number) => (
+        {doubleImages.map((img: number, index: number) => (
           <SwiperSlide className={'h-[50px]'} key={index}>
             <div className="cursor-pointer object-cover rounded-2xl transition-all overflow-hidden flex justify-center items-center">
               <img

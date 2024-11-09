@@ -49,7 +49,10 @@ const Provide = () => {
       </div>
       <div className="flex gap-5">
         {services.map((service: Record<string, any>, index: number) => (
-          <div className="bg-white transition-all hover:bg-blue-600 hover:text-white rounded-[7vw] shadow-xl px-6 py-20 w-64 text-center">
+          <div
+            key={index}
+            className="bg-white transition-all hover:bg-blue-600 hover:text-white rounded-[7vw] shadow-xl px-6 py-20 w-64 text-center"
+          >
             <div className="flex justify-center mb-4">
               <div className="text-4xl">{service.icon}</div>
             </div>
