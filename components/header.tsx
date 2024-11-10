@@ -20,10 +20,17 @@ function Header() {
   const breakpoint = useBreakpoint();
 
   useEffect(() => {
-    if (scrollY > window.innerHeight * 0.2) {
-      setIsCollapsed(true);
-    } else {
-      setIsCollapsed(false);
+    const handleScroll = () => {
+      if (scrollY > window.innerHeight * 0.2) {
+        setIsCollapsed(true);
+      } else {
+        setIsCollapsed(false);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
     }
   }, [scrollY]);
   const screens = useMemo(() => ['xs', 'sm', 'md'], []);
@@ -59,7 +66,7 @@ function Header() {
             height={80}
           />
           <div
-            className={`hidden md:flex gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
+            className={`hidden lg:flex lg:gap-5 gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
           >
             {menus.map((menu: Record<string, any>, index: number) =>
               menu.children ? (
@@ -72,8 +79,8 @@ function Header() {
                   }}
                   key={index}
                 >
-                  <Space className="">
-                    <p className="cursor-pointer">{menu.name}</p>
+                  <Space className="cursor-pointer">
+                    <p className="text-md md:text-[15px]">{menu.name}</p>
                     <IoIosArrowDown />
                   </Space>
                 </Dropdown>

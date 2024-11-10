@@ -26,3 +26,69 @@
   background-color: #121212;
   color: #f0f0f0;
 }
+
+#main-section {
+  animation: mainAnimation 3s;
+}
+
+@keyframes mainAnimation {
+  from {
+    background-size: 110%;
+  }
+  to {
+    object-fit: cover;
+    background-size: 120%;
+  }
+}
+
+.custom-card {
+  position: relative;
+  overflow: hidden;
+  color: #086ad8;
+}
+
+.custom-card h3,
+.custom-card p {
+  color: #000;
+}
+.custom-card:hover button {
+  color: #fff !important;
+}
+.custom-card:hover button:hover {
+  color: #000 !important;
+}
+
+.custom-card:hover h3,
+.custom-card:hover p {
+  color: #fff;
+}
+
+.custom-card:hover svg {
+  color: #fff;
+}
+
+.custom-card::before {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #086ad8;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.custom-card:hover::before {
+  bottom: 0;
+  color: #fff;
+}
+
+.mask-bg-iconbox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: #020101;
+  opacity: 0.15;
+}

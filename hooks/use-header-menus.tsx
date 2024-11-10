@@ -72,8 +72,8 @@ const useHeaderMenus = () => {
         ],
       },
       {
-        key: 'project-grid',
-        name: 'Project grid',
+        key: 'project',
+        name: 'Project',
         children: [
           {
             key: 'project-1',
