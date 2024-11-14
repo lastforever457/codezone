@@ -1,72 +1,81 @@
 import { Button, Col, Progress, Row } from 'antd';
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoMdLaptop } from 'react-icons/io';
 import { LuArrowUpRight } from 'react-icons/lu';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import {
+  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowRight,
+} from 'react-icons/md';
 
-function Service() {
-  const stars = [
-    {
-      id: 1,
-      icon: <FaStar />,
-    },
-    {
-      id: 2,
-      icon: <FaStar />,
-    },
-    {
-      id: 3,
-      icon: <FaStar />,
-    },
-    {
-      id: 4,
-      icon: <FaStar />,
-    },
-    {
-      id: 5,
-      icon: <FaStar />,
-    },
-  ];
+const Service = () => {
+  const [isHovering, setIsHovering] = useState<number>(0);
+  const stars = useMemo(
+    () => [
+      {
+        id: 1,
+        icon: <FaStar />,
+      },
+      {
+        id: 2,
+        icon: <FaStar />,
+      },
+      {
+        id: 3,
+        icon: <FaStar />,
+      },
+      {
+        id: 4,
+        icon: <FaStar />,
+      },
+      {
+        id: 5,
+        icon: <FaStar />,
+      },
+    ],
+    []
+  );
   const services = [
     {
       id: 1,
       title: 'UX/UI Design',
-      icon: <IoMdLaptop size={50} />,
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
     {
       id: 2,
       title: 'IT Management',
-      icon: <IoMdLaptop size={50} />,
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
     {
       id: 3,
       title: 'Data Security',
-      icon: <IoMdLaptop size={50} />,
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
     {
       id: 4,
-      title: 'Data Security',
-      icon: <IoMdLaptop size={50} />,
+      title: 'Infrastructure Plan',
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
     {
       id: 5,
-      title: 'Data Security',
-      icon: <IoMdLaptop size={50} />,
+      title: 'Firewall Advancement',
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
     {
       id: 6,
-      title: 'Data Security',
-      icon: <IoMdLaptop size={50} />,
+      title: 'Desktop Computing',
+      icon: <IoMdLaptop />,
       description:
         'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
     },
@@ -88,26 +97,65 @@ function Service() {
           {services.map((service: Record<string, any>, index: number) => (
             <Col xs={24} sm={12} md={8} lg={8} xl={8} key={service.id}>
               <div
-                key={service.id}
-                className={`relative bg-white p-8 shadow-lg group hover:bg-blue-500 hover:text-white transition duration-300`}
+                className={`${
+                  isHovering === index + 1
+                    ? 'flex z-40 opacity-100'
+                    : 'hidden opacity-0'
+                } absolute top-1/2 left-1/2 text-white p-10 w-full h-[120%] bg-blue-600 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none`}
               >
-                <div className="flex justify-between items-center">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex flex-col gap-10">
-                      <div className="flex flex-col gap-2">
-                        <span className="text-blue-600 font-bold">
-                          0{index + 1}
-                        </span>
-                        <h3 className="text-xl font-bold">{service.title}</h3>
-                      </div>
-                      {service.icon}
+                <div className="flex justify-between items-center w-full h-full">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-6xl">{service.icon}</span>
+                    <p className="font-semibold text-2xl">{service.title}</p>
+                    <p className="text-sm">{service.description}</p>
+                    <div className="flex">
+                      <Button
+                        icon={<MdKeyboardArrowRight />}
+                        iconPosition="end"
+                        type="text"
+                        className="text-white pl-0"
+                      >
+                        Read More
+                      </Button>
                     </div>
                   </div>
-                  <div className="flex flex-col">
-                    <Button className="py-16 rounded-3xl bg-[#F6F2ED]">
-                      <LuArrowUpRight />
-                    </Button>
+                  <div className="flex justify-end items-start h-full">
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.2 }}
+                      className="text-[7rem] font-bold text-white"
+                      style={{
+                        color: 'rgba(255, 255, 255, 0.7)',
+                      }}
+                    >
+                      0{index + 1}
+                    </motion.span>
                   </div>
+                </div>
+              </div>
+              <div
+                onMouseEnter={() => setIsHovering(index + 1)}
+                onMouseLeave={() => setIsHovering(0)}
+                key={service.id}
+                className={`relative bg-white flex p-10 justify-between items-center w-full shadow-lg h-[250px] group hover:bg-blue-500 hover:text-white transition duration-300 ${
+                  isHovering === index + 1 ? 'z-30' : 'z-10'
+                }`}
+              >
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-blue-600 font-bold">
+                        0{index + 1}
+                      </span>
+                      <h3 className="text-xl font-bold">{service.title}</h3>
+                    </div>
+                    <span className="text-6xl">{service.icon}</span>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <Button className="py-16 rounded-3xl bg-[#F6F2ED]">
+                    <LuArrowUpRight />
+                  </Button>
                 </div>
               </div>
             </Col>
@@ -199,6 +247,6 @@ function Service() {
       </div>
     </div>
   );
-}
+};
 
 export default Service;

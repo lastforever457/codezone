@@ -3,6 +3,7 @@
 import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Divider, Row } from 'antd';
 import { useMemo } from 'react';
+import CountUp from 'react-countup';
 import { FaUsers, FaUsersSlash } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -39,7 +40,7 @@ function CardComponent() {
     []
   );
 
-  const svg: JSX.Element = (
+  const svg: any = (
     <svg
       width="410"
       height="227"
@@ -102,7 +103,7 @@ function CardComponent() {
                 >
                   About Company
                 </h4>
-                <h2 className={'text-xl lg:text-4xl font-bold mb-3'}>
+                <h2 className={'text-xl lg:text-5xl font-bold mb-3'}>
                   Make your life {maxScreens.includes(breakpoint) && <br />}{' '}
                   easier with help from{' '}
                   <span className="text-blue-600">Wiatech</span>
@@ -169,14 +170,20 @@ function CardComponent() {
               >
                 <div>
                   <FaUsers size={50} className={'text-blue-600'} />
-                  <h3 className={'text-5xl font-bold mb-3'}>56k+</h3>
+                  <h3 className={'text-5xl font-bold mb-3'}>
+                    <CountUp start={0} end={56} duration={1} delay={1} />
+                    k+
+                  </h3>
                   <span className={'text-gray-500 text-lg'}>
                     Satisfied Customers
                   </span>
                 </div>
                 <div>
                   <FaUsers size={50} className={'text-blue-600'} />
-                  <h3 className={'text-5xl font-bold mb-3'}>8m+</h3>
+                  <h3 className={'text-5xl font-bold mb-3'}>
+                    <CountUp start={0} end={8} duration={1} delay={1} />
+                    m+
+                  </h3>
                   <span className={'text-gray-500 text-lg'}>
                     Project Complete
                   </span>

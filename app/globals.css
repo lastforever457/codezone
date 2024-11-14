@@ -28,7 +28,7 @@
 }
 
 #main-section {
-  animation: mainAnimation 3s;
+  animation: mainAnimation 3s cubic-bezier(0.84, 0.01, 0.21, 1.01);
 }
 
 @keyframes mainAnimation {
@@ -91,4 +91,57 @@
   top: 0;
   color: #020101;
   opacity: 0.15;
+}
+
+.custom-second-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-second-card h3,
+.custom-second-card p {
+  color: #000;
+}
+
+.custom-second-card:hover button {
+  color: #fff !important;
+}
+
+.custom-second-card:hover button:hover {
+  color: #000 !important;
+}
+
+.custom-second-card:hover h2,
+.custom-second-card:hover p {
+  color: #fff;
+}
+
+.custom-second-card:hover svg {
+  color: #fff;
+}
+
+.custom-second-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #086ad8;
+  transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  color: #fff;
+}
+
+.custom-second-card:hover::before {
+  top: 0;
+  color: #fff;
+}
+
+.custom-second-button {
+  background-color: #086ad8;
+}
+
+.custom-second-card:hover .custom-second-button {
+  background-color: #d2a98e;
 }
