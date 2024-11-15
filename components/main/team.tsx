@@ -43,11 +43,17 @@ function TeamComponent() {
   );
 
   return (
-    <div className="px-5 lg:px-72 py-10 lg:py-16 mb-14">
-      <h4 className="text-md lg:text-xl text-center text-blue-500 font-bold">
+    <div className="px-5 lg:px-72 py-10 lg:py-16 mb-10">
+      <h4
+        data-aos="fade-up"
+        className="text-md lg:text-xl text-center text-blue-500 font-bold"
+      >
         Meet Our Team
       </h4>
-      <h2 className="text-2xl lg:text-5xl font-bold text-center mt-2 lg:mt-4 mb-14">
+      <h2
+        data-aos="fade-up"
+        className="text-2xl lg:text-5xl font-bold text-center mt-2 lg:mt-4 mb-14"
+      >
         We’ve an Exclusive Team <br /> Meet our Professionals
       </h2>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -55,6 +61,7 @@ function TeamComponent() {
           <div className="mt-0 lg:mt-8 space-y-6">
             {teamMembers.map((member, index) => (
               <div
+                data-aos="fade-up"
                 onMouseEnter={() => handleHighlight(member)}
                 key={member.id}
                 className={`flex items-center space-x-4 p-4 rounded border-b-2 cursor-pointer ${
@@ -80,6 +87,7 @@ function TeamComponent() {
         <div className="flex items-center transition-all justify-center gap-8 lg:items-start">
           <div>
             <img
+              data-aos="zoom-in"
               src={highlightedMember.image}
               alt={highlightedMember.name}
               className="w-[400px] h-[380px] rounded-md transition-all shadow-lg object-cover mb-4"

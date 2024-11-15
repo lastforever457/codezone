@@ -60,7 +60,7 @@ function CardComponent() {
       <div className={'mt-[-270px] lg:mt-[-230px] mb-24 flex justify-between'}>
         <Row gutter={[20, 20]}>
           {cards.map((card: Record<string, any>, index: number) => (
-            <Col xs={24} sm={24} md={12} lg={8} key={index}>
+            <Col data-aos="fade-up" xs={24} sm={24} md={12} lg={8} key={index}>
               <div
                 className={
                   'bg-white shadow-xl custom-card lg:shadow-none rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 h-[350px] hover:text-white hover:border-b-white flex flex-col justify-center items-start'
@@ -84,7 +84,7 @@ function CardComponent() {
       </div>
       <div className={'mt-20 flex justify-center gap-14'}>
         <Row gutter={[20, 0]}>
-          <Col xs={24} sm={24} md={12} lg={8}>
+          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-right">
             <div className="relative overflow-hidden rounded-full">
               <img
                 src="/men.jpg"
@@ -93,7 +93,7 @@ function CardComponent() {
               />
             </div>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
+          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-up">
             <div className="flex lg:justify-center items-center w-full h-full lg:pl-5">
               <div className="p-2 flex flex-col justify-between items-start">
                 <h4
@@ -148,7 +148,7 @@ function CardComponent() {
               </div>
             </div>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
+          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-left">
             <div className={''}>
               <h1
                 className={

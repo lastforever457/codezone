@@ -40,7 +40,7 @@ const Provide = () => {
     []
   );
   return (
-    <div className="py-16 px-5 lg:px-72">
+    <div className="py-10 px-5 lg:px-72">
       <div
         className={
           'text-center flex flex-col justify-center items-center mb-10'

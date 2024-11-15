@@ -84,22 +84,28 @@ const Service = () => {
   return (
     <div className="bg-[#F6F2ED] mt-24 mb-14">
       <div className="flex items-center pt-24 justify-center flex-col gap-4 pb-12">
-        <h4 className="text-blue-500 text-xl font-bold lg:text-2xl">
+        <h4
+          data-aos="fade-up"
+          className="text-blue-500 text-xl font-bold lg:text-2xl"
+        >
           Popular Services
         </h4>
-        <h2 className="text-3xl lg:text-5xl font-bold text-center">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl lg:text-5xl font-bold text-center"
+        >
           Services We Provide
         </h2>
       </div>
 
-      <div className="gap-6 pb-24 px-5 lg:px-72">
+      <div data-aos="fade-up" className="gap-6 pb-24 px-5 lg:px-72">
         <Row gutter={[2, 2]}>
           {services.map((service: Record<string, any>, index: number) => (
             <Col xs={24} sm={12} md={8} lg={8} xl={8} key={service.id}>
               <div
                 className={`${
                   isHovering === index + 1
-                    ? 'flex z-40 opacity-100'
+                    ? 'flex z-50 opacity-100'
                     : 'hidden opacity-0'
                 } absolute top-1/2 left-1/2 text-white p-10 w-full h-[120%] bg-blue-600 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none`}
               >
@@ -166,18 +172,30 @@ const Service = () => {
         <Row>
           <Col xs={24} sm={24} md={11} lg={11}>
             <div className="py-5 lg:py-16 pl-5 lg:pl-72 pr-10">
-              <h4 className="text-xl text-blue-500 font-bold">
+              <h4
+                data-aos="fade-up"
+                className="text-xl text-blue-500 font-bold"
+              >
                 Best IT Solutions
               </h4>
-              <h2 className="text-3xl lg:text-5xl font-bold mt-6">
+              <h2
+                data-aos="fade-up"
+                className="text-3xl lg:text-5xl font-bold mt-6"
+              >
                 We Prominent Truly IT Your solutions
               </h2>
-              <p className="text-gray-500 mt-8 text-sm lg:text-[16px]">
+              <p
+                data-aos="fade-up"
+                className="text-gray-500 mt-8 text-sm lg:text-[16px]"
+              >
                 We denounce with righteous indignation and like men who are so
                 beguiled and demoralized by the charms of pleasure of the
                 moment, so blinded by desire foresee the pain
               </p>
-              <div className="flex justify-center lg:justify-start gap-5 items-center mt-10">
+              <div
+                data-aos="fade-up"
+                className="flex justify-center lg:justify-start gap-5 items-center mt-10"
+              >
                 <div className="flex flex-col justify-center items-center">
                   <Progress size={'small'} type="circle" percent={68} />
                   <p className="mt-2 font-semibold">Business Strategy</p>
@@ -187,7 +205,10 @@ const Service = () => {
                   <p className="mt-2 font-semibold">Technology Solutions</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-5 lg:flex-row justify-center lg:items-center mt-10 space-x-4">
+              <div
+                data-aos="fade-up"
+                className="flex flex-col gap-5 lg:flex-row justify-center lg:items-center mt-10 space-x-4"
+              >
                 <div className="">
                   <Button
                     iconPosition="end"

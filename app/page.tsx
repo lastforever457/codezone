@@ -4,6 +4,7 @@ import Header from '@/components/header';
 import Blog from '@/components/main/blog';
 import CardComponent from '@/components/main/card-component';
 import MainSection from '@/components/main/main-section';
+import ModernTechnologies from '@/components/main/modern-technologies';
 import Provide from '@/components/main/provide';
 import Service from '@/components/main/service';
 import SwiperLeft from '@/components/main/swiper-left';
@@ -24,6 +25,7 @@ const Page = () => {
       <CardComponent />
       <Service />
       <TeamComponent />
+      <ModernTechnologies />
       <Provide />
       <Blog />
     </div>
