@@ -27,16 +27,11 @@
   color: #f0f0f0;
 }
 
-#main-section {
-  animation: mainAnimation 3s cubic-bezier(0.84, 0.01, 0.21, 1.01);
-}
-
 @keyframes mainAnimation {
   from {
     background-size: 110%;
   }
   to {
-    object-fit: cover;
     background-size: 120%;
   }
 }

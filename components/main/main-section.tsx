@@ -1,18 +1,26 @@
 'use client';
 
+import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Row } from 'antd';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const MainSection = () => {
+  const breakpoint = useBreakpoint();
   return (
     <div
       className={
-        "relative bg-[url('/main.jpg')] bg-no-repeat min-h-screen bg-cover bg-center bg-black w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-72 pt-16 sm:pt-20 lg:pt-32 xl:pt-52"
+        'relative bg-no-repeat h-[70vh] md:h-screen bg-cover object-cover bg-center bg-black w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-72 pt-16 sm:pt-20 lg:pt-32 xl:pt-52'
       }
       style={{
-        animation: 'mainAnimation 3s',
+        backgroundImage: `url('/main.jpg')`,
+        animation: ['md', 'lg', 'xl', '2xl'].includes(breakpoint)
+          ? 'mainAnimation 3s'
+          : 'none',
         animationFillMode: 'forwards',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="max-w-[1440px] mx-auto">

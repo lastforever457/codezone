@@ -53,8 +53,8 @@ function Header() {
   return (
     <>
       <header
-        className={`w-full top-0 h-[80px] bg-black ${
-          isCollapsed ? 'sticky' : ''
+        className={`w-full sticky md:static top-0 h-[80px] bg-black ${
+          isCollapsed ? 'md:sticky' : ''
         } transition-all bg-cover bg-center`}
         style={{ zIndex: 50, borderBottom: '1px solid #999' }}
       >

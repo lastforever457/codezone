@@ -57,16 +57,14 @@ function TeamComponent() {
         We’ve an Exclusive Team <br /> Meet our Professionals
       </h2>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div>
+        <div data-aos="fade-up">
           <div className="mt-0 lg:mt-8 space-y-6">
             {teamMembers.map((member, index) => (
               <div
-                data-aos="fade-up"
                 onMouseEnter={() => handleHighlight(member)}
                 key={member.id}
-                className={`flex items-center space-x-4 p-4 rounded border-b-2 cursor-pointer ${
-                  highlightedMember.id === member.id &&
-                  'hover:border-b-black hover:underline'
+                className={`flex items-center transition-all space-x-4 p-4 rounded border-b-2 cursor-pointer ${
+                  highlightedMember.id === member.id && 'hover:border-b-black'
                 }`}
               >
                 <span className="text-blue-500 font-bold text-xl">
