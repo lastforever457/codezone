@@ -82,7 +82,17 @@ const Service = () => {
   ];
 
   return (
-    <div className="bg-[#F6F2ED] mt-24 mb-14">
+    <div className="bg-[#F6F2ED] mt-24 mb-14 relative">
+      <img
+        src="/dot-pattern.png"
+        className="absolute rotate-180 opacity-25"
+        alt=""
+      />
+      <img
+        src="/dot-pattern.png"
+        className="absolute right-0 transform scale-y-[-1] opacity-25"
+        alt=""
+      />
       <div className="flex items-center pt-24 justify-center flex-col gap-4 pb-12">
         <h4
           data-aos="fade-up"
@@ -168,7 +178,13 @@ const Service = () => {
           ))}
         </Row>
       </div>
-      <div>
+      <div className="relative">
+        <img
+          src="/pattern.png"
+          alt=""
+          className="absolute top-0 left-0 h-[400px] w-full"
+          color="#000"
+        />
         <Row>
           <Col xs={24} sm={24} md={11} lg={11}>
             <div className="py-5 lg:py-16 pl-5 lg:pl-72 pr-10">

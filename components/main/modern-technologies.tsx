@@ -16,8 +16,12 @@ const ModernTechnologies = () => {
               />
             </div>
           </Col>
-          <Col md={10} xs={24}>
-            <div className="flex h-[500px] md:h-[80%] justify-center items-center">
+          <Col
+            md={10}
+            xs={24}
+            className="w-full h-full flex justify-center items-center"
+          >
+            <div className="flex h-[500px] md:h-[80%] justify-center items-center md:mt-28">
               <div className="w-full flex flex-col items-start gap-6 md:gap-10 h-full text-white py-10 px-5 md:px-20 md:py-28 bg-[#020626]">
                 <span className="text-8xl text-blue-600">
                   <IoLayersOutline />

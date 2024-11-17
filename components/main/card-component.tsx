@@ -12,7 +12,7 @@ import { TiTick } from 'react-icons/ti';
 
 function CardComponent() {
   const breakpoint = useBreakpoint();
-  const maxScreens = useMemo(() => ['lg', 'xl'], []);
+  const maxScreens = useMemo(() => ['md', 'lg', 'xl'], []);
   const cards = useMemo(
     () => [
       {
@@ -84,7 +84,13 @@ function CardComponent() {
       </div>
       <div className={'mt-20 flex justify-center gap-14'}>
         <Row gutter={[20, 0]}>
-          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-right">
+          <Col
+            xs={24}
+            sm={24}
+            md={12}
+            lg={8}
+            data-aos={maxScreens.includes(breakpoint) ? 'fade-right' : ''}
+          >
             <div className="relative overflow-hidden rounded-full">
               <img
                 src="/men.jpg"
@@ -93,7 +99,13 @@ function CardComponent() {
               />
             </div>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-up">
+          <Col
+            xs={24}
+            sm={24}
+            md={12}
+            lg={8}
+            data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
+          >
             <div className="flex lg:justify-center items-center w-full h-full lg:pl-5">
               <div className="p-2 flex flex-col justify-between items-start">
                 <h4
@@ -148,7 +160,13 @@ function CardComponent() {
               </div>
             </div>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={8} data-aos="fade-left">
+          <Col
+            xs={24}
+            sm={24}
+            md={12}
+            lg={8}
+            data-aos={maxScreens.includes(breakpoint) ? 'fade-left' : ''}
+          >
             <div className={''}>
               <h1
                 className={
