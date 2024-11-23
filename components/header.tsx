@@ -74,7 +74,7 @@ function Header() {
           onClick={() => i18n.changeLanguage('uz')}
         >
           <img src="/uzb.png" alt="Uzbek" width={20} height={20} />
-          <span>O'zbek</span>
+          <span>O&apos;zbek</span>
         </div>
       ),
     },
@@ -265,7 +265,7 @@ function Header() {
               onClick={() => i18n.changeLanguage('uz')}
             >
               <img src="/uzb.png" width={30} alt="" />
-              <span>O'zbekcha</span>
+              <span>O&apos;zbekcha</span>
             </div>
             <div
               className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
