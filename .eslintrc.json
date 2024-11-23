@@ -1,18 +1,10 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript",
-    "eslint:recommended"
-  ],
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "extends": ["next/core-web-vitals", "next/typescript", "eslint:recommended"],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "import"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
