@@ -71,7 +71,7 @@ function Header() {
           onClick={() => i18n.changeLanguage('uz')}
         >
           <img src="/uzb.png" alt="Uzbek" width={20} height={20} />
-          <span>O&apos;zbek</span>
+          <span>O'zbek</span>
         </div>
       ),
     },
@@ -237,7 +237,6 @@ function Header() {
                 type="link"
               >
                 <FaLinkedinIn />
-                string
               </Button>
               <Button
                 className="text-white bg-blue-600"
@@ -250,7 +249,7 @@ function Header() {
           </div>
         </Drawer>
         <Drawer
-          title={<img width={150} src="/logo.png" />}
+          title={<img width={150} src="/logo.png" alt="logo" />}
           className={'custom-drawer'}
           placement="left"
           onClose={() => setOpenSm(false)}
@@ -261,16 +260,16 @@ function Header() {
               className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
               onClick={() => i18n.changeLanguage('uz')}
             >
-              <img src="/uzb.png" width={30} alt="" />
-              <span>O&apos;zbekcha</span>
+              <img src="/uzb.png" width={30} alt="uzbek" />
+              <span>O'zbekcha</span>
             </div>
             <div
               className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
               onClick={() => i18n.changeLanguage('ru')}
             >
-              <img src="/rus.png" width={30} alt="" />
+              <img src="/rus.png" width={30} alt="russian" />
               <span>Русский</span>
-            </div>{' '}
+            </div>
           </div>
           <Menu theme="dark" mode="inline" items={menuItems} />
         </Drawer>
