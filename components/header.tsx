@@ -22,7 +22,7 @@ import { GrLanguage } from 'react-icons/gr';
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiMenu3Line } from 'react-icons/ri';
 
-function Header() {
+const Header = () => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   const [openSm, setOpenSm] = useState<boolean>(false);
@@ -276,6 +276,6 @@ function Header() {
       </header>
     </>
   );
-}
+};
 
 export default Header;
