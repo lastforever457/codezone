@@ -2,10 +2,12 @@
 
 import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Row } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const MainSection = () => {
+  const { t } = useTranslation();
   const breakpoint = useBreakpoint();
   return (
     <div
@@ -30,23 +32,23 @@ const MainSection = () => {
               <div className="space-y-6 sm:space-y-8">
                 <div className="flex items-center gap-2">
                   <FiArrowUpRight className="text-lg sm:text-xl" />
-                  <p className="text-base sm:text-xl underline">
-                    5m+ Trusted Our Clients
+                  <p className="text-base sm:text-xl underline cursor-default">
+                    {t('5m')}.
                   </p>
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-[550px]">
-                  Modern & Digital IT Solutions For Your Tech Business
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-[650px]">
+                  {t('main title')}
                 </h1>
                 <p className="text-base sm:text-lg xl:text-xl">
-                  25+ Years Of Experience In Tech Services
+                  {t('tech services')}.
                 </p>
                 <Button
                   type="primary"
                   icon={<MdOutlineKeyboardArrowRight />}
                   iconPosition="end"
-                  className="mt-4 rounded-lg px-6 sm:px-8 lg:px-10 py-5 sm:py-5 text-base sm:text-lg"
+                  className="mt-4 rounded-lg px-6 sm:px-8 lg:px-10 py-6 sm:py-5 text-base sm:text-lg"
                 >
-                  Explore Our Services
+                  {t('explore our services')}
                 </Button>
               </div>
             </div>

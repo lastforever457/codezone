@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   AiOutlineBulb,
   AiOutlineCloudServer,
@@ -9,35 +10,36 @@ import {
 import { FaHandsHelping, FaLayerGroup } from 'react-icons/fa';
 
 const Provide = () => {
+  const { t } = useTranslation();
   const services = useMemo(
     () => [
       {
         id: 1,
         icon: <FaHandsHelping />,
-        title: 'IT Consultancy',
+        title: t('IT Consultancy'),
       },
       {
         id: 2,
         icon: <FaLayerGroup />,
-        title: 'Software Development',
+        title: t('Software Development'),
       },
       {
         id: 3,
         icon: <AiOutlineCloudServer />,
-        title: 'Data Service',
+        title: t('Data Service'),
       },
       {
         id: 4,
         icon: <AiOutlineSafety />,
-        title: 'Cyber Security Solutions',
+        title: t('Cyber Security Solutions'),
       },
       {
         id: 5,
         icon: <AiOutlineBulb />,
-        title: 'Collaborative Partnership',
+        title: t('Collaborative Partnership'),
       },
     ],
-    []
+    [t]
   );
   return (
     <div className="py-10 px-5 lg:px-72">
@@ -46,9 +48,11 @@ const Provide = () => {
           'text-center flex flex-col justify-center items-center mb-10'
         }
       >
-        <h4 className="text-blue-500 text-xl font-bold">What We Provide</h4>
-        <h2 className="text-5xl max-w-[700px] text-center font-bold mt-4">
-          We Run all kinds of IT services that vow your success
+        <h4 className="text-blue-500 text-xl font-bold">
+          {t('What We Provide')}
+        </h4>
+        <h2 className="text-5xl max-w-[950px] text-center font-bold mt-4">
+          {t('We Run all kinds of IT services that vow your success')}
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">

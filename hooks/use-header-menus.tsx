@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const useHeaderMenus = () => {
+  const { t } = useTranslation();
   const menus = useMemo(
     () => [
       {
         key: 'home',
-        name: 'Home',
+        name: t('home'),
         children: [
           {
             key: 'home-1',
@@ -41,7 +43,7 @@ const useHeaderMenus = () => {
       },
       {
         key: 'company',
-        name: 'Company',
+        name: t('company'),
         children: [
           {
             key: 'about-company',
@@ -62,7 +64,7 @@ const useHeaderMenus = () => {
       },
       {
         key: 'service',
-        name: 'Service',
+        name: t('service'),
         children: [
           {
             key: 'service-1',
@@ -73,7 +75,7 @@ const useHeaderMenus = () => {
       },
       {
         key: 'project',
-        name: 'Project',
+        name: t('project'),
         children: [
           {
             key: 'project-1',
@@ -94,7 +96,7 @@ const useHeaderMenus = () => {
       },
       {
         key: 'page',
-        name: 'Page',
+        name: t('page'),
         children: [
           {
             key: 'faq',
@@ -115,7 +117,7 @@ const useHeaderMenus = () => {
       },
       {
         key: 'blog',
-        name: 'Blog',
+        name: t('blog'),
         children: [
           {
             key: 'blog-grid',
@@ -136,12 +138,12 @@ const useHeaderMenus = () => {
       },
       {
         key: 'contact',
-        name: 'Contact',
+        name: t('contact'),
         link: '/contact',
         children: [],
       },
     ],
-    []
+    [t]
   );
 
   return { menus };

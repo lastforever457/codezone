@@ -1,8 +1,10 @@
 import { Button, Col, Row } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { BiChevronRight } from 'react-icons/bi';
 import { IoLayersOutline } from 'react-icons/io5';
 
 const ModernTechnologies = () => {
+  const { t } = useTranslation();
   return (
     <div className="px-5 lg:px-0 py-7 lg:py-16">
       <div className="flex w-full max-h-[792px] items-center justify-center">
@@ -27,7 +29,7 @@ const ModernTechnologies = () => {
                   <IoLayersOutline />
                 </span>
                 <h1 className="text-3xl font-bold">
-                  Modern Technology Advancement and Innovative Incentives
+                  {t('modern technologies')}
                 </h1>
                 <p className="text-[#999]">
                   We denounce with righteous indignation and like men who are
@@ -40,7 +42,7 @@ const ModernTechnologies = () => {
                   className="px-7 py-6 rounded-lg font-semibold"
                   iconPosition="end"
                 >
-                  View Details
+                  {t('View Details')}
                 </Button>
               </div>
             </div>

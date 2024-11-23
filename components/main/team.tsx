@@ -1,36 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { LuArrowUpRight } from 'react-icons/lu';
 
 function TeamComponent() {
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'George C. Anderson',
-      role: 'Senior Manager',
-      image: '/men-1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Brandon D. Garcia',
-      role: 'IT Consultant',
-      image: '/men-2.jpg',
-    },
-    {
-      id: 3,
-      name: 'William A. Rogers',
-      role: 'Product Designer',
-      image: '/men-3.jpg',
-    },
-    {
-      id: 4,
-      name: 'Matthew R. Howard',
-      role: 'IT Manager',
-      image: '/men-4.jpg',
-    },
-  ];
+  const { t } = useTranslation();
+  const teamMembers = useMemo(
+    () => [
+      {
+        id: 1,
+        name: 'George C. Anderson',
+        role: t('senior manager'),
+        image: '/men-1.jpg',
+      },
+      {
+        id: 2,
+        name: 'Brandon D. Garcia',
+        role: t('IT Consultant'),
+        image: '/men-2.jpg',
+      },
+      {
+        id: 3,
+        name: 'William A. Rogers',
+        role: t('Product Designer'),
+        image: '/men-3.jpg',
+      },
+      {
+        id: 4,
+        name: 'Matthew R. Howard',
+        role: t('IT Manager'),
+        image: '/men-4.jpg',
+      },
+    ],
+    [t]
+  );
 
   const [highlightedMember, setHighlightedMember] = useState(teamMembers[0]);
 
@@ -48,13 +53,13 @@ function TeamComponent() {
         data-aos="fade-up"
         className="text-md lg:text-xl text-center text-blue-500 font-bold"
       >
-        Meet Our Team
+        {t('Meet Our Team')}
       </h4>
       <h2
         data-aos="fade-up"
         className="text-2xl lg:text-5xl font-bold text-center mt-2 lg:mt-4 mb-14"
       >
-        We’ve an Exclusive Team <br /> Meet our Professionals
+        {t('Weve an Exclusive Team Meet our Professionals')}
       </h2>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div data-aos="fade-up">

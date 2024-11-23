@@ -3,21 +3,36 @@
 import useBreakpoint from '@/hooks/use-breakpoint';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import useScroll from '@/hooks/use-scroll';
-import { Button, Drawer, Dropdown, Menu, Space } from 'antd';
+import i18n from '@/i18n/i18n';
+import {
+  Button,
+  Drawer,
+  Dropdown,
+  Menu,
+  MenuProps,
+  Space,
+  Tooltip,
+} from 'antd';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaSearch } from 'react-icons/fa';
 import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6';
+import { GrLanguage } from 'react-icons/gr';
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiMenu3Line } from 'react-icons/ri';
 
 function Header() {
+  const [currentLanguage, setCurrentLanguage] = useState<'uz' | 'ru'>(
+    i18n.language as 'uz' | 'ru'
+  );
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   const [openSm, setOpenSm] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const { menus } = useHeaderMenus();
   const breakpoint = useBreakpoint();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +65,32 @@ function Header() {
     });
   }, [menus]);
 
+  const items: MenuProps['items'] = [
+    {
+      key: 'uz',
+      label: (
+        <div
+          className="flex items-center gap-2"
+          onClick={() => i18n.changeLanguage('uz')}
+        >
+          <img src="/uzb.png" alt="Uzbek" width={20} height={20} />
+          <span>O'zbek</span>
+        </div>
+      ),
+    },
+    {
+      key: 'ru',
+      label: (
+        <div
+          className="flex items-center gap-2"
+          onClick={() => i18n.changeLanguage('ru')}
+        >
+          <img src="/rus.png" alt="Russian" width={20} height={20} />
+          <span>Русский</span>
+        </div>
+      ),
+    },
+  ];
   return (
     <>
       <header
@@ -69,7 +110,7 @@ function Header() {
             className={`hidden lg:flex lg:gap-5 gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
           >
             {menus.map((menu: Record<string, any>, index: number) =>
-              menu.children ? (
+              menu.children.length > 0 ? (
                 <Dropdown
                   menu={{
                     items: menu.children.map((child: any) => ({
@@ -85,7 +126,9 @@ function Header() {
                   </Space>
                 </Dropdown>
               ) : (
-                <p key={index}>{menu.name}</p>
+                <p key={index} className="text-sm">
+                  {menu.name}
+                </p>
               )
             )}
           </div>
@@ -98,6 +141,16 @@ function Header() {
             >
               <FaSearch size={20} />
             </button>
+            <Dropdown className="hidden lg:flex" menu={{ items }}>
+              <button
+                style={{ borderLeft: '1px solid #999' }}
+                className={
+                  'h-full w-[90px] lg:w-[100px] flex justify-center items-center text-white p-0 m-0'
+                }
+              >
+                <GrLanguage size={20} />
+              </button>
+            </Dropdown>
             <Button
               onClick={() => {
                 if (screens.includes(breakpoint)) {
@@ -156,22 +209,24 @@ function Header() {
             </p>
           </div>
           <div className="mt-10 flex flex-col pl-5 text-[#444]">
-            <h2 className="font-bold text-xl text-black">Contact</h2>
+            <h2 className="font-bold text-xl text-black">{t('contact')}</h2>
             <p>55 Main Street, 2nd block</p>
             <p>Malborne, Australia</p>
             <p>support@gmail.com</p>
             <p>+880 (123) 456 88</p>
           </div>
           <div className="flex flex-col mt-10 pl-5">
-            <p className="font-bold text-lg">Follow Us</p>
+            <p className="font-bold text-lg">{t('follow us')}</p>
             <div className="flex gap-3 mt-3">
-              <Button
-                className="text-white bg-blue-600"
-                shape="circle"
-                type="link"
-              >
-                <FaFacebook />
-              </Button>
+              <Tooltip title="Facebook">
+                <Button
+                  className="text-white bg-blue-600"
+                  shape="circle"
+                  type="link"
+                >
+                  <FaFacebook />
+                </Button>
+              </Tooltip>
               <Button
                 className="text-white bg-blue-600"
                 shape="circle"
@@ -185,6 +240,7 @@ function Header() {
                 type="link"
               >
                 <FaLinkedinIn />
+                string
               </Button>
               <Button
                 className="text-white bg-blue-600"
@@ -203,6 +259,22 @@ function Header() {
           onClose={() => setOpenSm(false)}
           open={openSm}
         >
+          <div className="flex w-full justify-around items-center">
+            <div
+              className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
+              onClick={() => i18n.changeLanguage('uz')}
+            >
+              <img src="/uzb.png" width={30} alt="" />
+              <span>O'zbekcha</span>
+            </div>
+            <div
+              className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
+              onClick={() => i18n.changeLanguage('ru')}
+            >
+              <img src="/rus.png" width={30} alt="" />
+              <span>Русский</span>
+            </div>{' '}
+          </div>
           <Menu theme="dark" mode="inline" items={menuItems} />
         </Drawer>
       </header>

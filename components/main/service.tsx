@@ -1,6 +1,7 @@
 import { Button, Col, Progress, Row } from 'antd';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaStar } from 'react-icons/fa';
 import { IoMdLaptop } from 'react-icons/io';
 import { LuArrowUpRight } from 'react-icons/lu';
@@ -10,6 +11,7 @@ import {
 } from 'react-icons/md';
 
 const Service = () => {
+  const { t } = useTranslation();
   const [isHovering, setIsHovering] = useState<number>(0);
   const stars = useMemo(
     () => [
@@ -36,50 +38,53 @@ const Service = () => {
     ],
     []
   );
-  const services = [
-    {
-      id: 1,
-      title: 'UX/UI Design',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-    {
-      id: 2,
-      title: 'IT Management',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-    {
-      id: 3,
-      title: 'Data Security',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-    {
-      id: 4,
-      title: 'Infrastructure Plan',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-    {
-      id: 5,
-      title: 'Firewall Advancement',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-    {
-      id: 6,
-      title: 'Desktop Computing',
-      icon: <IoMdLaptop />,
-      description:
-        'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
-    },
-  ];
+  const services = useMemo(
+    () => [
+      {
+        id: 1,
+        title: t('UX/UI Design'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+      {
+        id: 2,
+        title: t('IT Management'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+      {
+        id: 3,
+        title: t('Data Security'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+      {
+        id: 4,
+        title: t('Infrastructure Plan'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+      {
+        id: 5,
+        title: t('Firewall Advancement'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+      {
+        id: 6,
+        title: t('Desktop Computing'),
+        icon: <IoMdLaptop />,
+        description:
+          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+      },
+    ],
+    [t]
+  );
 
   return (
     <div className="bg-[#F6F2ED] mt-24 mb-14 relative">
@@ -98,13 +103,13 @@ const Service = () => {
           data-aos="fade-up"
           className="text-blue-500 text-xl font-bold lg:text-2xl"
         >
-          Popular Services
+          {t('Popular Services')}
         </h4>
         <h2
           data-aos="fade-up"
           className="text-3xl lg:text-5xl font-bold text-center"
         >
-          Services We Provide
+          {t('Services We Provide')}
         </h2>
       </div>
 
@@ -131,7 +136,7 @@ const Service = () => {
                         type="text"
                         className="text-white pl-0"
                       >
-                        Read More
+                        {t('read more')}
                       </Button>
                     </div>
                   </div>
@@ -192,13 +197,13 @@ const Service = () => {
                 data-aos="fade-up"
                 className="text-xl text-blue-500 font-bold"
               >
-                Best IT Solutions
+                {t('Best IT Solutions')}
               </h4>
               <h2
                 data-aos="fade-up"
                 className="text-3xl lg:text-5xl font-bold mt-6"
               >
-                We Prominent Truly IT Your solutions
+                {t('We Prominent Truly IT Your solutions')}
               </h2>
               <p
                 data-aos="fade-up"
@@ -214,11 +219,13 @@ const Service = () => {
               >
                 <div className="flex flex-col justify-center items-center">
                   <Progress size={'small'} type="circle" percent={68} />
-                  <p className="mt-2 font-semibold">Business Strategy</p>
+                  <p className="mt-2 font-semibold">{t('Business Strategy')}</p>
                 </div>
                 <div className="flex flex-col justify-center items-center">
                   <Progress size={'small'} type="circle" percent={93} />
-                  <p className="mt-2 font-semibold">Technology Solutions</p>
+                  <p className="mt-2 font-semibold">
+                    {t('Technology Solutions')}
+                  </p>
                 </div>
               </div>
               <div
@@ -232,7 +239,7 @@ const Service = () => {
                     type="primary"
                     className="px-12 py-5 text-white rounded-xl font-bold hover:bg-blue-700 transition duration-300"
                   >
-                    Read More
+                    {t('read more')}
                   </Button>
                 </div>
                 <div className="flex justify-start items-center">
@@ -247,7 +254,7 @@ const Service = () => {
                     ))}
                   </div>
                   <span className="ml-4 text-lg font-medium">
-                    10m+ Customers
+                    10m+ {t('Customers')}
                   </span>
                 </div>
               </div>
@@ -266,7 +273,7 @@ const Service = () => {
                 >
                   <h1 className={'text-6xl font-bold mb-2'}>25+</h1>
                   <h4 className={'border-b-2 border-b-white'}>
-                    Years of Experience
+                    {t('Years of Experience')}
                   </h4>
                   <div className={'flex items-center gap-3 pt-6'}>
                     {stars.map((item) => (
@@ -274,7 +281,7 @@ const Service = () => {
                         <span>{item.icon}</span>
                       </div>
                     ))}
-                    <span>Trustpoint</span>
+                    <span>{t('Trustpoint')}</span>
                   </div>
                 </div>
               </div>

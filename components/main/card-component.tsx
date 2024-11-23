@@ -4,6 +4,7 @@ import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Divider, Row } from 'antd';
 import { useMemo } from 'react';
 import CountUp from 'react-countup';
+import { useTranslation } from 'react-i18next';
 import { FaUsers, FaUsersSlash } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -13,31 +14,35 @@ import { TiTick } from 'react-icons/ti';
 function CardComponent() {
   const breakpoint = useBreakpoint();
   const maxScreens = useMemo(() => ['md', 'lg', 'xl'], []);
+  const { t } = useTranslation();
   const cards = useMemo(
     () => [
       {
         id: 1,
-        title: 'Cost-effectiveness',
-        description:
-          'We offer It Solution that help you reduce costs and improve',
+        title: t('cost effectiveness'),
+        description: t(
+          'We offer It Solution that help you reduce costs and improve'
+        ),
         icon: <GiReceiveMoney size={80} />,
       },
       {
         id: 2,
-        title: 'Innovative Technology',
-        description:
-          'We offer It Solution that help you reduce costs and improve',
+        title: t('Innovative Technology'),
+        description: t(
+          'We offer It Solution that help you reduce costs and improve'
+        ),
         icon: <MdSettingsBrightness size={80} />,
       },
       {
         id: 3,
-        title: 'Industry Expertise',
-        description:
-          'We offer It Solution that help you reduce costs and improve',
+        title: t('Industry Expertise'),
+        description: t(
+          'We offer It Solution that help you reduce costs and improve'
+        ),
         icon: <FaUsersSlash size={80} />,
       },
     ],
-    []
+    [t]
   );
 
   const svg: any = (
@@ -75,7 +80,7 @@ function CardComponent() {
                     'mt-6 py-3 px-10 text-black z-20 transition-all font-bold border-2 border-gray-200 rounded-xl hover:bg-white hover:text-black'
                   }
                 >
-                  Read More
+                  {t('read more')}
                 </button>
               </div>
             </Col>
@@ -113,12 +118,10 @@ function CardComponent() {
                     'font-bold mt-16 mb-2 lg:mb-5 text-lg lg:text-2xl text-blue-500'
                   }
                 >
-                  About Company
+                  {t('about company')}
                 </h4>
                 <h2 className={'text-xl lg:text-5xl font-bold mb-3'}>
-                  Make your life {maxScreens.includes(breakpoint) && <br />}{' '}
-                  easier with help from{' '}
-                  <span className="text-blue-600">Wiatech</span>
+                  {t('Make your life')}
                 </h2>
                 <br />
                 <span
@@ -127,7 +130,7 @@ function CardComponent() {
                   }
                 >
                   <TiTick size={24} className={'text-blue-600'} />
-                  Professional Team Member
+                  {t('Professional Team Member')}
                 </span>
                 <br />
                 <span
@@ -135,8 +138,8 @@ function CardComponent() {
                     'text-gray-500 font-medium p-0 m-0 flex justify-center items-center gap-2'
                   }
                 >
-                  <TiTick size={24} className={'text-blue-600'} /> Awards
-                  Winning IT Solutions Company
+                  <TiTick size={24} className={'text-blue-600'} />
+                  {t('Awards Winning IT Solutions Company')}
                 </span>
                 <br />
                 <span
@@ -144,18 +147,18 @@ function CardComponent() {
                     'text-gray-500 font-medium p-0 m-0 flex justify-center items-center gap-2'
                   }
                 >
-                  <TiTick size={24} className={'text-blue-600'} /> Dedicated
-                  Tech Services
+                  <TiTick size={24} className={'text-blue-600'} />
+                  {t('Dedicated Tech Services')}
                 </span>
                 <br />
                 <Button
                   iconPosition="end"
                   icon={<IoIosArrowForward />}
                   className={
-                    'bg-blue-600 text-white py-6 px-10 text-xl rounded-xl mt-6'
+                    'bg-blue-600 text-white py-6 px-10 text-lg rounded-xl mt-6'
                   }
                 >
-                  Read More
+                  {t('read more')}
                 </Button>
               </div>
             </div>
@@ -173,7 +176,7 @@ function CardComponent() {
                   'pr-5 text-xl lg:text-2xl mt-10 lg:mt-16 mb-5 font-bold'
                 }
               >
-                We’ve 25+ Years Of Experience In Tech Services
+                {t('We’ve 25+ Years Of Experience In Tech Services')}
               </h1>
               <span className={'text-gray-500 mt-5 text-md text-justify'}>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -193,7 +196,7 @@ function CardComponent() {
                     k+
                   </h3>
                   <span className={'text-gray-500 text-lg'}>
-                    Satisfied Customers
+                    {t('Satisfied Customers')}
                   </span>
                 </div>
                 <div>

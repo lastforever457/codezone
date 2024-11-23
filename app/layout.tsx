@@ -1,5 +1,8 @@
+'use client';
+
 import { ConfigProvider } from 'antd';
 import { ReactNode } from 'react';
+import '../i18n/i18n';
 import './globals.css';
 
 export default function RootLayout({
