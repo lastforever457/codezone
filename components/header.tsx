@@ -23,9 +23,6 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { RiMenu3Line } from 'react-icons/ri';
 
 function Header() {
-  const [currentLanguage, setCurrentLanguage] = useState<'uz' | 'ru'>(
-    i18n.language as 'uz' | 'ru'
-  );
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   const [openSm, setOpenSm] = useState<boolean>(false);
