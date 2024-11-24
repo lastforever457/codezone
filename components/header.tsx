@@ -255,7 +255,7 @@ const Header = () => {
           onClose={() => setOpenSm(false)}
           open={openSm}
         >
-          <div className="flex w-full justify-around items-center">
+          <div className="flex w-full justify-around items-center mb-5">
             <div
               className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
               onClick={() => i18n.changeLanguage('uz')}
