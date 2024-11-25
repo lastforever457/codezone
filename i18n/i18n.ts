@@ -16,11 +16,10 @@ i18n
     },
   });
 
-const locales = ['uz', 'ru'];
-
 export { i18n };
 
 export default getRequestConfig(async ({ locale }) => {
+  const locales = ['uz', 'ru'];
   if (!locales.includes(locale as any)) notFound();
 
   return {
