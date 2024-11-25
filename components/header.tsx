@@ -3,7 +3,7 @@
 import useBreakpoint from '@/hooks/use-breakpoint';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import useScroll from '@/hooks/use-scroll';
-import i18n from '@/i18n/i18n';
+import { i18n } from '@/i18n/i18n';
 import {
   Button,
   Drawer,
