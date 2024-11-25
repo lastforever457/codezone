@@ -113,7 +113,7 @@ const Service = () => {
         </h2>
       </div>
 
-      <div data-aos="fade-up" className="gap-6 pb-24 px-5 lg:px-72">
+      <div className="gap-6 pb-24 px-5 lg:px-72">
         <Row gutter={[2, 2]}>
           {services.map((service: Record<string, any>, index: number) => (
             <Col xs={24} sm={12} md={8} lg={8} xl={8} key={service.id}>
@@ -193,10 +193,7 @@ const Service = () => {
         <Row>
           <Col xs={24} sm={24} md={11} lg={11}>
             <div className="py-5 lg:py-16 pl-5 lg:pl-72 pr-10">
-              <h4
-                data-aos="fade-up"
-                className="text-xl text-blue-500 font-bold"
-              >
+              <h4 className="text-xl text-blue-500 font-bold">
                 {t('Best IT Solutions')}
               </h4>
               <h2

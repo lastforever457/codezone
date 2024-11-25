@@ -1,8 +1,10 @@
 'use client';
 
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Blog from '@/components/main/blog';
 import CardComponent from '@/components/main/card-component';
+import Contact from '@/components/main/contact';
 import MainSection from '@/components/main/main-section';
 import ModernTechnologies from '@/components/main/modern-technologies';
 import Provide from '@/components/main/provide';
@@ -28,6 +30,8 @@ const Page = () => {
       <ModernTechnologies />
       <Provide />
       <Blog />
+      <Contact />
+      <Footer />
     </div>
   );
 };

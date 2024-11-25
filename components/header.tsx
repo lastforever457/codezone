@@ -94,7 +94,7 @@ const Header = () => {
         className={`w-full sticky md:static top-0 h-[80px] bg-black ${
           isCollapsed ? 'md:sticky' : ''
         } transition-all bg-cover bg-center`}
-        style={{ zIndex: 50, borderBottom: '1px solid #999' }}
+        style={{ zIndex: 150, borderBottom: '1px solid #999' }}
       >
         <div className="w-full h-full flex justify-between items-center pl-5 md:pl-10">
           <img
