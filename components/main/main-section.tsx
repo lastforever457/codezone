@@ -11,6 +11,7 @@ const MainSection = () => {
   const breakpoint = useBreakpoint();
   return (
     <div
+      id="home"
       className={
         'relative bg-no-repeat h-[70vh] md:h-screen bg-cover object-cover bg-center bg-black w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-72 pt-16 sm:pt-20 lg:pt-32 xl:pt-52'
       }
