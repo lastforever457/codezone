@@ -1,19 +1,39 @@
 'use client';
 
-import Footer from '@/components/footer';
-import Header from '@/components/header';
-import Blog from '@/components/main/blog';
-import CardComponent from '@/components/main/card-component';
-import Contact from '@/components/main/contact';
-import MainSection from '@/components/main/main-section';
-import ModernTechnologies from '@/components/main/modern-technologies';
-import Provide from '@/components/main/provide';
-import Service from '@/components/main/service';
-import SwiperLeft from '@/components/main/swiper-left';
-import TeamComponent from '@/components/main/team';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
+
+const Footer = dynamic(() => import('@/components/footer'), { ssr: false });
+const Header = dynamic(() => import('@/components/header'), { ssr: false });
+const Blog = dynamic(() => import('@/components/main/blog'), { ssr: false });
+const CardComponent = dynamic(
+  () => import('@/components/main/card-component'),
+  { ssr: false }
+);
+const Contact = dynamic(() => import('@/components/main/contact'), {
+  ssr: false,
+});
+const MainSection = dynamic(() => import('@/components/main/main-section'), {
+  ssr: false,
+});
+const ModernTechnologies = dynamic(
+  () => import('@/components/main/modern-technologies'),
+  { ssr: false }
+);
+const Provide = dynamic(() => import('@/components/main/provide'), {
+  ssr: false,
+});
+const Service = dynamic(() => import('@/components/main/service'), {
+  ssr: false,
+});
+const SwiperLeft = dynamic(() => import('@/components/main/swiper-left'), {
+  ssr: false,
+});
+const TeamComponent = dynamic(() => import('@/components/main/team'), {
+  ssr: false,
+});
 
 const Page = () => {
   useEffect(() => {
