@@ -2,6 +2,7 @@ import { MailOutlined } from '@ant-design/icons';
 import { Button, Col, Input, Row } from 'antd';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { CgChevronRight } from 'react-icons/cg';
 import { FaInstagram, FaStarOfLife, FaTwitter } from 'react-icons/fa';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa6';
@@ -11,6 +12,7 @@ import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
         navigation={false}
         className="w-full"
         loop
-        spaceBetween={20}
+        spaceBetween={0}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -45,67 +47,67 @@ const Footer: React.FC = () => {
         }}
       >
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Data Security
+              {t('Data Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Cyber Security
+              {t('Cyber Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Data Security
+              {t('Data Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Cyber Security
+              {t('Cyber Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Data Security
+              {t('Data Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-6xl font-semibold">
+          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
             <span className="text-blue-600">
               <FaStarOfLife />
             </span>
             <p className="relative group cursor-pointer hover:text-blue-700">
-              Cyber Security
+              {t('Cyber Security')}
               <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
             </p>
           </div>
@@ -127,7 +129,7 @@ const Footer: React.FC = () => {
               <p className="text-gray-500 text-lg">
                 Sed ut persiciatis unde omnis natus voluptatem
               </p>
-              <p className="text-xl font-bold">Follow us</p>
+              <p className="text-xl font-bold">{t('follow us')}</p>
               <div className="flex space-x-4">
                 <Link
                   href="#"
@@ -157,66 +159,64 @@ const Footer: React.FC = () => {
             </div>
           </Col>
           <Col xs={24} sm={12} lg={5}>
-            <h2 className="text-xl font-bold mb-5 pl-2">IT Services</h2>
+            <h2 className="text-xl font-bold mb-5 pl-2">{t('IT Services')}</h2>
             <ul className="space-y-3 text-lg text-gray-600">
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight className="text-xl" />
-                IT Consultancy
+                {t('IT Consultancy')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight className="text-xl" />
-                IT Management
+                {t('IT Management')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight className="text-xl" />
-                IT Support
+                {t('IT Support')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight className="text-xl" />
-                Cloud Computing
+                {t('Cloud Computing')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight className="text-xl" />
-                Cyber Security
+                {t('Cyber Security')}
               </li>
             </ul>
           </Col>
           <Col xs={24} sm={12} lg={5}>
-            <h2 className="text-xl font-bold mb-5 pl-2">Support</h2>
+            <h2 className="text-xl font-bold mb-5 pl-2">{t('Support')}</h2>
             <ul className="space-y-3 text-lg text-gray-600">
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight />
-                Forum Support
+                {t('Forum Support')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight />
-                Help & FAQ
+                {t('Help & FAQ')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight />
-                Contact Us
+                {t('Contact Us')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight />
-                Pricing and Plans
+                {t('Pricing and Plans')}
               </li>
               <li className="flex justify-start gap-2 items-center">
                 <CgChevronRight />
-                Cookies Policy
+                {t('Cookies Policy')}
               </li>
             </ul>
           </Col>
 
           <Col xs={24} sm={12} lg={8}>
-            <h2 className="text-xl font-bold mb-5">Newsletter</h2>
-            <p className="text-gray-500 text-xl">
-              Subscribe our newsletter to get more updates
-            </p>
+            <h2 className="text-xl font-bold mb-5">{t('Newsletter')}</h2>
+            <p className="text-gray-500 text-xl">{t('Newsletter desc')}</p>
             <div className="flex items-center my-5 gap-2 rounded-lg border border-gray-300 bg-gray-50 p-2 shadow-sm">
               {/* <MailOutlined className="text-gray-500 text-lg" /> */}
               <Input
                 prefix={<MailOutlined className="text-gray-500 text-lg" />}
-                placeholder="Email Address"
+                placeholder={t('Email Address')}
                 className="border-none bg-gray-50  focus:outline-none p-2"
               />
               <Button
@@ -225,21 +225,29 @@ const Footer: React.FC = () => {
                 icon={<CgChevronRight />}
                 iconPosition="end"
               >
-                Sign Up
+                {t('Sign Up')}
               </Button>
             </div>
-            <p className="text-lg font-light">
-              By subscribing, you’re accept{' '}
-              <Link className="font-bold underline" href={'/'}>
-                Privacy Policy
-              </Link>
-            </p>
           </Col>
         </Row>
-        {/* <div className="mt-8 text-center text-gray-500">
-          © 2023 WiaTech - IT Services. All rights reserved.
-        </div> */}
       </footer>
+      <div className="flex justify-between text-[#555] mt-20">
+        <div>© 2023 WiaTech - IT Services. All rights reserved.</div>
+        <div className="flex justify-center items-center gap-5">
+          <Link className="hover:text-blue-600" href="/">
+            {t('company')}
+          </Link>
+          <Link className="hover:text-blue-600" href="/">
+            {t('support')}
+          </Link>
+          <Link className="hover:text-blue-600" href="/">
+            {t('privacy')}
+          </Link>
+          <Link className="hover:text-blue-600" href="/">
+            FAQs
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

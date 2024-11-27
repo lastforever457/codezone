@@ -90,12 +90,12 @@ const Service = () => {
     <div className="bg-[#F6F2ED] mt-24 mb-14 relative">
       <img
         src="/dot-pattern.png"
-        className="absolute rotate-180 opacity-25"
+        className="absolute w-40 md:w-full rotate-180 opacity-25"
         alt=""
       />
       <img
         src="/dot-pattern.png"
-        className="absolute right-0 transform scale-y-[-1] opacity-25"
+        className="absolute w-40 md:w-full right-0 transform scale-y-[-1] opacity-25"
         alt=""
       />
       <div className="flex items-center pt-24 justify-center flex-col gap-4 pb-12">
@@ -134,10 +134,10 @@ const Service = () => {
                         icon={<MdKeyboardArrowRight />}
                         iconPosition="end"
                         type="text"
-                        className="text-white pl-0"
+                        className="text-white pl-0 cursor-pointer hover:translate-x-2 transition-transform duration-300 ease-in-out hover:text-white hover:scale-105"
                       >
                         {t('read more')}
-                      </Button>
+                      </Button>{' '}
                     </div>
                   </div>
                   <div className="flex justify-end items-start h-full">
@@ -234,7 +234,7 @@ const Service = () => {
                     iconPosition="end"
                     icon={<MdOutlineKeyboardArrowRight />}
                     type="primary"
-                    className="px-12 py-5 text-white rounded-xl font-bold hover:bg-blue-700 transition duration-300"
+                    className="px-12 py-5 text-white rounded-lg font-bold hover:bg-blue-700 transition duration-300"
                   >
                     {t('read more')}
                   </Button>

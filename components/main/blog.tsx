@@ -90,7 +90,7 @@ const Blog = () => {
                             href="#"
                             className=" cursor-pointer text-gray-500 hover:text-blue-500 hover:underline mt-1 inline-block text-md"
                           >
-                            Read More
+                            {t('read more')}
                           </a>
                         </Col>
                         <Col span={6}>
