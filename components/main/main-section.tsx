@@ -12,24 +12,15 @@ const MainSection = () => {
   return (
     <div
       id="home"
-      className={
-        'relative bg-no-repeat h-[70vh] md:h-screen bg-cover object-cover bg-center bg-black w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-72 pt-16 sm:pt-20 lg:pt-32 xl:pt-52'
-      }
+      className="relative bg-no-repeat h-[70vh] xl:h-screen bg-black w-full px-4 sm:px-6 md:px-8 2xl:px-72 pt-16 sm:pt-20 lg:pt-10 2xl:pt-32 2xl:py-52 bg-cover bg-center"
       style={{
         backgroundImage: `url('/main.jpg')`,
-        animation: ['md', 'lg', 'xl', '2xl'].includes(breakpoint)
-          ? 'mainAnimation 3s'
-          : 'none',
-        animationFillMode: 'forwards',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="max-w-[1440px] mx-auto">
         <Row className="flex flex-col lg:flex-row">
           <Col xs={24} lg={12} className="w-full">
-            <div className="text-white">
+            <div className="text-white flex flex-col md:mt-32">
               <div className="space-y-6 sm:space-y-8">
                 <div className="flex items-center gap-2">
                   <FiArrowUpRight className="text-lg sm:text-xl" />
@@ -37,7 +28,7 @@ const MainSection = () => {
                     {t('5m')}.
                   </p>
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-[650px]">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-[650px]">
                   {t('main title')}
                 </h1>
                 <p className="text-base sm:text-lg xl:text-xl">
@@ -47,7 +38,7 @@ const MainSection = () => {
                   type="primary"
                   icon={<MdOutlineKeyboardArrowRight />}
                   iconPosition="end"
-                  className="mt-4 rounded-lg px-6 sm:px-8 lg:px-10 py-6 sm:py-5 text-base sm:text-lg"
+                  className="mt-4 rounded-lg px-5 sm:px-8 lg:px-10 py-5 sm:py-5 text-sm sm:text-lg"
                 >
                   {t('explore our services')}
                 </Button>

@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { LuArrowUpRight } from 'react-icons/lu';
 
 function TeamComponent() {
@@ -48,16 +47,16 @@ function TeamComponent() {
   );
 
   return (
-    <div className="px-5 lg:px-72 py-10 lg:py-16 mb-10">
+    <div className="px-5 2xl:px-72 py-10 2xl:py-16 mb-10">
       <h4
         data-aos="fade-up"
-        className="text-md lg:text-xl text-center text-blue-500 font-bold"
+        className="text-md xl:text-lg 2xl:text-xl text-center text-blue-500 font-bold"
       >
         {t('Meet Our Team')}
       </h4>
       <h2
         data-aos="fade-up"
-        className="text-2xl lg:text-5xl font-bold text-center mt-2 lg:mt-4 mb-14"
+        className="text-2xl xl:text-3xl 2xl:text-5xl font-bold text-center mt-2 2xl:mt-4 mb-14"
       >
         {t('Weve an Exclusive Team Meet our Professionals')}
       </h2>
@@ -87,43 +86,21 @@ function TeamComponent() {
           </div>
         </div>
 
-        <div className="flex items-center transition-all justify-center gap-8 lg:items-start">
-          <div>
+        <div className="flex items-center transition-all justify-center gap-3 md:gap-8 lg:items-start">
+          <div className="relative">
             <img
               data-aos="zoom-in"
               src={highlightedMember.image}
               alt={highlightedMember.name}
-              className="w-[400px] h-[380px] rounded-md transition-all shadow-lg object-cover mb-4"
+              className="w-[400px] h-[380px] rounded-md transition-all shadow-lg object-cover"
             />
-            <h3 className="text-2xl font-semibold">{highlightedMember.name}</h3>
-            <p className="text-gray-500 mb-6">{highlightedMember.role}</p>
-            <div className="flex items-center justify-start px-5 space-x-4 mt-[-150px]">
-              <div className={'bg-blue-600 flex gap-3 px-5 py-2 rounded'}>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-800 transition duration-300"
-                >
-                  <FaFacebook size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-600 transition duration-300"
-                >
-                  <FaTwitter size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-900 transition duration-300"
-                >
-                  <FaLinkedinIn size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-red-800 transition duration-300"
-                >
-                  <FaYoutube size={24} />
-                </a>
-              </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-4">
+              <h3 className="text-base md:text-2xl font-semibold text-white">
+                {highlightedMember.name}
+              </h3>
+              <p className="text-gray-200 text-sm md:text-base">
+                {highlightedMember.role}
+              </p>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-2">
@@ -132,6 +109,7 @@ function TeamComponent() {
                 key={member.id}
                 src={member.image}
                 alt={member.name}
+                onClick={() => handleHighlight(member)}
                 className="w-[120px] h-[120px] object-cover border border-gray-200"
               />
             ))}

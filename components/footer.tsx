@@ -1,3 +1,4 @@
+import useBreakpoint from '@/hooks/use-breakpoint';
 import { MailOutlined } from '@ant-design/icons';
 import { Button, Col, Input, Row } from 'antd';
 import Link from 'next/link';
@@ -7,12 +8,14 @@ import { CgChevronRight } from 'react-icons/cg';
 import { FaInstagram, FaStarOfLife, FaTwitter } from 'react-icons/fa';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa6';
 import { IoArrowUpOutline } from 'react-icons/io5';
+import { LuSend } from 'react-icons/lu';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
+  const breakpoint = useBreakpoint();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -72,7 +75,7 @@ const Footer: React.FC = () => {
     [t]
   );
   return (
-    <div className="bg-[#ECE8E3] px-5 lg:px-72 py-10 lg:py-16">
+    <div className="bg-[#ECE8E3] px-5 2xl:px-72 md:py-10 2xl:py-16">
       <Swiper
         navigation={false}
         className="w-full"
@@ -97,74 +100,25 @@ const Footer: React.FC = () => {
           },
         }}
       >
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Data Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Cyber Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Data Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Cyber Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Data Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center gap-2 w-full items-center h-56 text-5xl font-semibold">
-            <span className="text-blue-600">
-              <FaStarOfLife />
-            </span>
-            <p className="relative group cursor-pointer hover:text-blue-700">
-              {t('Cyber Security')}
-              <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-            </p>
-          </div>
-        </SwiperSlide>
+        {new Array(10).fill(0).map((_, index: number) => (
+          <SwiperSlide key={index}>
+            <div className="flex justify-center gap-2 w-full items-center 2xl:h-56 lg:h-32 text-3xl font-semibold">
+              <div className="flex justify-center items-center">
+                <span className="text-blue-600">
+                  <FaStarOfLife />
+                </span>
+                <p className="relative group cursor-pointer hover:text-blue-700">
+                  {(index + 1) % 2 === 0
+                    ? t('Data Security')
+                    : t('Cyber Security')}
+                  <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
-      <footer className="bg-white py-20 px-5 md:px-14 mt-8 relative">
+      <footer className="bg-white py-10 md:py-20 px-5 md:px-14 md:mt-8 relative">
         <span className="up-btn absolute bottom-0 bg-white left-1/2 flex justify-center items-center -translate-x-1/2 rounded-full size-16 translate-y-1/2">
           <button
             onClick={scrollToTop}
@@ -212,12 +166,14 @@ const Footer: React.FC = () => {
             </div>
           </Col>
           <Col xs={24} sm={12} lg={5}>
-            <h2 className="text-xl font-bold mb-5 pl-2">{t('IT Services')}</h2>
+            <h2 className="text-base md:text-xl font-bold mb-5 pl-2">
+              {t('IT Services')}
+            </h2>
             <ul className="space-y-3 text-lg text-gray-600">
               {listColumn1.map((item: Record<string, any>, index: number) => (
                 <li
                   key={index}
-                  className="flex justify-start gap-2 items-center"
+                  className="flex justify-start gap-2 items-center text-sm md:text-base"
                 >
                   <CgChevronRight className="text-xl" />
                   {item.name}
@@ -226,12 +182,14 @@ const Footer: React.FC = () => {
             </ul>
           </Col>
           <Col xs={24} sm={12} lg={5}>
-            <h2 className="text-xl font-bold mb-5 pl-2">{t('Support')}</h2>
+            <h2 className="text-base md:text-xl font-bold mb-5 pl-2">
+              {t('Support')}
+            </h2>
             <ul className="space-y-3 text-lg text-gray-600">
               {listColumn2.map((item: Record<string, any>, index: number) => (
                 <li
                   key={index}
-                  className="flex justify-start gap-2 items-center"
+                  className="flex justify-start gap-2 items-center text-sm md:text-base"
                 >
                   <CgChevronRight className="text-xl" />
                   {item.name}
@@ -241,8 +199,10 @@ const Footer: React.FC = () => {
           </Col>
 
           <Col xs={24} sm={12} lg={8}>
-            <h2 className="text-xl font-bold mb-5">{t('Newsletter')}</h2>
-            <p className="text-gray-500 text-base md:text-xl">
+            <h2 className="text-base md:text-xl font-bold mb-3 md:mb-5">
+              {t('Newsletter')}
+            </h2>
+            <p className="text-gray-500 text-sm md:text-xl">
               {t('Newsletter desc')}
             </p>
             <div className="flex items-center my-5 gap-2 rounded-lg border border-gray-300 bg-gray-50 p-2 shadow-sm">
@@ -254,18 +214,18 @@ const Footer: React.FC = () => {
               />
               <Button
                 type="primary"
-                className="flex items-center rounded-lg p-5"
-                icon={<CgChevronRight />}
+                className="flex items-center rounded-lg p-3 md:p-5"
+                icon={!['sm', 'xs'].includes(breakpoint) && <CgChevronRight />}
                 iconPosition="end"
               >
-                {t('Sign Up')}
+                {['sm', 'xs'].includes(breakpoint) ? <LuSend /> : t('Sign Up')}
               </Button>
             </div>
           </Col>
         </Row>
       </footer>
-      <div className="flex-col md:flex-row justify-between text-[#555] mt-20">
-        <p className="text-center mb-5 md:mb-0">
+      <div className="flex md:flex-row xl:flex-row justify-between items-center text-[#555] mt-20 pb-10">
+        <p className="text-sm md:text-base text-center mb-5 2xl:mb-0">
           © 2023 WiaTech - IT Services. {t('All rights reserved')}.
         </p>
         <div className="flex justify-center items-center gap-5 text-sm md:text-base">

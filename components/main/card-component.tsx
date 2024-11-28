@@ -61,14 +61,14 @@ function CardComponent() {
   );
 
   return (
-    <div className={'px-5 lg:px-72 pt-20 pb-0'}>
-      <div className={'mt-[-270px] lg:mt-[-230px] mb-24 flex justify-between'}>
+    <div className={'px-5 2xl:px-72 pt-20 pb-0'}>
+      <div className={'mt-[-270px] 2xl:mt-[-230px] mb-24 flex justify-between'}>
         <Row gutter={[20, 20]}>
           {cards.map((card: Record<string, any>, index: number) => (
-            <Col data-aos="fade-up" xs={24} sm={24} md={12} lg={8} key={index}>
+            <Col data-aos="fade-up" xs={24} sm={24} md={8} lg={8} key={index}>
               <div
                 className={
-                  'bg-white shadow-xl custom-card lg:shadow-none rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 h-[350px] hover:text-white hover:border-b-white flex flex-col justify-center items-start'
+                  'bg-white shadow-xl custom-card lg:shadow-none rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 min-h-[350px] hover:text-white hover:border-b-white h-full flex flex-col justify-center items-start'
                 }
               >
                 <div className="mask-bg-iconbox z-20">{svg}</div>
@@ -94,7 +94,7 @@ function CardComponent() {
             sm={24}
             md={12}
             lg={8}
-            data-aos={maxScreens.includes(breakpoint) ? 'fade-right' : ''}
+            data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
           >
             <div className="relative overflow-hidden rounded-full">
               <img
@@ -120,7 +120,9 @@ function CardComponent() {
                 >
                   {t('about company')}
                 </h4>
-                <h2 className={'text-xl lg:text-5xl font-bold mb-3'}>
+                <h2
+                  className={'text-xl md:text-3xl lg:text-5xl font-bold mb-3'}
+                >
                   {t('Make your life')}
                 </h2>
                 <br />
@@ -155,7 +157,7 @@ function CardComponent() {
                   iconPosition="end"
                   icon={<IoIosArrowForward />}
                   className={
-                    'bg-blue-600 text-white py-6 px-10 text-lg rounded-xl mt-6'
+                    'bg-blue-600 text-white py-5 px-6 md:py-6 md:px-10 text-sm md:text-lg rounded-xl mt-6'
                   }
                 >
                   {t('read more')}
@@ -166,9 +168,9 @@ function CardComponent() {
           <Col
             xs={24}
             sm={24}
-            md={12}
+            md={24}
             lg={8}
-            data-aos={maxScreens.includes(breakpoint) ? 'fade-left' : ''}
+            data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
           >
             <div className={''}>
               <h1
@@ -183,15 +185,15 @@ function CardComponent() {
                 accusantium doloremque laudantium totam rem aperiam, eaque epsa
                 inventore
               </span>
-              <Divider className={'my-5 lg:my-14'} />
+              <Divider className={'my-5 md:my-10 lg:my-14'} />
               <div
                 className={
                   'flex gap-5 lg:gap-0 justify-start lg:justify-between items-center'
                 }
               >
                 <div>
-                  <FaUsers size={50} className={'text-blue-600'} />
-                  <h3 className={'text-5xl font-bold mb-3'}>
+                  <FaUsers className={'text-blue-600 w-[50px] h-[50px]'} />{' '}
+                  <h3 className={'text-3xl md:text-5xl font-bold mb-3'}>
                     <CountUp start={0} end={56} duration={1} delay={1} />
                     k+
                   </h3>
@@ -201,7 +203,7 @@ function CardComponent() {
                 </div>
                 <div>
                   <FaUsers size={50} className={'text-blue-600'} />
-                  <h3 className={'text-5xl font-bold mb-3'}>
+                  <h3 className={'text-3xl md:text-5xl font-bold mb-3'}>
                     <CountUp start={0} end={8} duration={1} delay={1} />
                     m+
                   </h3>

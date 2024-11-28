@@ -4,6 +4,7 @@ import useBreakpoint from '@/hooks/use-breakpoint';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import useScroll from '@/hooks/use-scroll';
 import { i18n } from '@/i18n/i18n';
+import { CloseOutlined } from '@ant-design/icons';
 import {
   Button,
   Drawer,
@@ -45,7 +46,7 @@ const Header = () => {
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, [scrollY]);
-  const screens = useMemo(() => ['xs', 'sm', 'md'], []);
+  const screens = useMemo(() => ['xs', 'sm', 'md', 'lg', 'xl'], []);
 
   const menuItems = useMemo(() => {
     return menus.map((menu: Record<string, any>) => {
@@ -104,7 +105,7 @@ const Header = () => {
             height={80}
           />
           <div
-            className={`hidden lg:flex lg:gap-5 gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
+            className={`hidden 2xl:flex lg:gap-5 gap-10 h-full bg-black text-white px-16 text-lg justify-center items-center`}
           >
             {menus.map((menu: Record<string, any>, index: number) =>
               menu.children.length > 0 ? (
@@ -138,7 +139,7 @@ const Header = () => {
             >
               <FaSearch size={20} />
             </button>
-            <Dropdown className="hidden lg:flex" menu={{ items }}>
+            <Dropdown className="hidden 2xl:flex" menu={{ items }}>
               <button
                 style={{ borderLeft: '1px solid #999' }}
                 className={
@@ -162,7 +163,7 @@ const Header = () => {
               }
             >
               <RiMenu3Line className="text-2xl" />
-              <p className={'ml-2  hidden lg:block'}>Menu</p>
+              <p className={'ml-2 hidden lg:block'}>Menu</p>
             </Button>
           </div>
         </div>
@@ -172,31 +173,31 @@ const Header = () => {
               className="hover:pl-2 hover:text-blue-600 text-md transition-all"
               href={'/'}
             >
-              About
+              {t('Company')}
             </Link>
             <Link
               className="hover:pl-2 hover:text-blue-600 text-md transition-all"
               href={'/'}
             >
-              IT Management
+              {t('IT Management')}
             </Link>
             <Link
               className="hover:pl-2 hover:text-blue-600 text-md transition-all"
               href={'/'}
             >
-              Help Center
+              {t('Help Center')}
             </Link>
             <Link
               className="hover:pl-2 hover:text-blue-600 text-md transition-all"
               href={'/'}
             >
-              Portfolio
+              {t('Portfolio')}
             </Link>
             <Link
               className="hover:pl-2 hover:text-blue-600 text-md transition-all"
               href={'/'}
             >
-              Blog
+              {t('Blog')}
             </Link>
           </div>
           <div className="flex flex-col pl-5 mt-10">
@@ -216,36 +217,50 @@ const Header = () => {
             <p className="font-bold text-lg">{t('follow us')}</p>
             <div className="flex gap-3 mt-3">
               <Tooltip title="Facebook">
-                <Button
-                  className="text-white bg-blue-600"
-                  shape="circle"
-                  type="link"
-                >
-                  <FaFacebook />
-                </Button>
+                <Link href="https://facebook.com" target="_blank">
+                  <Button
+                    className="text-white bg-blue-600"
+                    shape="circle"
+                    type="link"
+                  >
+                    <FaFacebook />
+                  </Button>
+                </Link>
               </Tooltip>
-              <Button
-                className="text-white bg-blue-600"
-                shape="circle"
-                type="link"
-              >
-                <FaTwitter />
-              </Button>
-              <Button
-                className="text-white bg-blue-600"
-                shape="circle"
-                type="link"
-              >
-                <FaLinkedinIn />
-              </Button>
-              <Button
-                className="text-white bg-blue-600"
-                shape="circle"
-                type="link"
-              >
-                <FaInstagram />
-              </Button>
-            </div>
+              <Tooltip title="Twitter">
+                <Link href="https://twitter.com" target="_blank">
+                  <Button
+                    className="text-white bg-blue-600"
+                    shape="circle"
+                    type="link"
+                  >
+                    <FaTwitter />
+                  </Button>
+                </Link>
+              </Tooltip>
+              <Tooltip title="LinkedIn">
+                <Link href="https://linkedin.com" target="_blank">
+                  <Button
+                    className="text-white bg-blue-600"
+                    shape="circle"
+                    type="link"
+                  >
+                    <FaLinkedinIn />
+                  </Button>
+                </Link>
+              </Tooltip>
+              <Tooltip title="Instagram">
+                <Link href="https://instagram.com" target="_blank">
+                  <Button
+                    className="text-white bg-blue-600"
+                    shape="circle"
+                    type="link"
+                  >
+                    <FaInstagram />
+                  </Button>
+                </Link>
+              </Tooltip>
+            </div>{' '}
           </div>
         </Drawer>
         <Drawer
@@ -254,6 +269,7 @@ const Header = () => {
           placement="left"
           onClose={() => setOpenSm(false)}
           open={openSm}
+          closeIcon={<CloseOutlined className="text-white" />}
         >
           <div className="flex w-full justify-around items-center mb-5">
             <div

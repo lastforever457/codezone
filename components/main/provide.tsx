@@ -42,16 +42,16 @@ const Provide = () => {
     [t]
   );
   return (
-    <div className="py-10 px-5 lg:px-72">
+    <div className="py-0 md:py-10 px-5 2xl:px-72">
       <div
         className={
           'text-center flex flex-col justify-center items-center mb-10'
         }
       >
-        <h4 className="text-blue-500 text-xl font-bold">
+        <h4 className="text-blue-500 text-base md:text-xls font-bold">
           {t('What We Provide')}
         </h4>
-        <h2 className="text-5xl max-w-[950px] text-center font-bold mt-4">
+        <h2 className="text-2xl md:text-4xl 2xl:text-5xl max-w-[950px] text-center font-bold mt-4">
           {t('We Run all kinds of IT services that vow your success')}
         </h2>
       </div>
@@ -63,7 +63,7 @@ const Provide = () => {
                 <div className="flex justify-center mb-3">
                   <div className="text-4xl">{service.icon}</div>
                 </div>
-                <h2 className="text-lg font-semibold h-24 text-center flex justify-center items-center">
+                <h2 className="text-lg font-semibold h-16 md:h-24 text-center flex justify-center items-center">
                   {service.title}
                 </h2>
                 <button className="custom-second-button text-white rounded-full p-2 hover:bg-blue-600 focus:outline-none">

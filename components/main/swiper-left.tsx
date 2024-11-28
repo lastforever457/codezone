@@ -13,7 +13,7 @@ const SwiperLeft = () => {
   return (
     <div
       className={
-        'bg-[#020626] py-14 lg:py-20 lg:px-72 h-[350px] bg-center bg-contain object-contain'
+        'bg-[#020626] py-14 2xl:py-20 2xl:px-72 h-[350px] bg-center bg-contain object-contain'
       }
       style={{ backgroundImage: `url("/pattern.png")` }}
     >
@@ -32,7 +32,7 @@ const SwiperLeft = () => {
             spaceBetween: 40,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 30,
           },
           1024: {
