@@ -1,7 +1,7 @@
 import { MailOutlined } from '@ant-design/icons';
 import { Button, Col, Input, Row } from 'antd';
 import Link from 'next/link';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CgChevronRight } from 'react-icons/cg';
 import { FaInstagram, FaStarOfLife, FaTwitter } from 'react-icons/fa';
@@ -20,6 +20,57 @@ const Footer: React.FC = () => {
     });
   };
 
+  const listColumn1 = useMemo(
+    () => [
+      {
+        id: 0,
+        name: t('IT Consultancy'),
+      },
+      {
+        id: 1,
+        name: t('IT Management'),
+      },
+      {
+        id: 2,
+        name: t('IT Support'),
+      },
+      {
+        id: 3,
+        name: t('Cloud Computing'),
+      },
+      {
+        id: 4,
+        name: t('Cyber Security'),
+      },
+    ],
+    [t]
+  );
+
+  const listColumn2 = useMemo(
+    () => [
+      {
+        id: 0,
+        name: t('Forum Support'),
+      },
+      {
+        id: 1,
+        name: t('Help & FAQ'),
+      },
+      {
+        id: 2,
+        name: t('Contact Us'),
+      },
+      {
+        id: 3,
+        name: t('Pricing and Plans'),
+      },
+      {
+        id: 4,
+        name: t('Cookies Policy'),
+      },
+    ],
+    [t]
+  );
   return (
     <div className="bg-[#ECE8E3] px-5 lg:px-72 py-10 lg:py-16">
       <Swiper
@@ -113,7 +164,7 @@ const Footer: React.FC = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <footer className="bg-white py-20 px-14 mt-8 relative">
+      <footer className="bg-white py-20 px-5 md:px-14 mt-8 relative">
         <span className="up-btn absolute bottom-0 bg-white left-1/2 flex justify-center items-center -translate-x-1/2 rounded-full size-16 translate-y-1/2">
           <button
             onClick={scrollToTop}
@@ -122,14 +173,16 @@ const Footer: React.FC = () => {
             <IoArrowUpOutline className="text-xl text-white font-bold" />
           </button>
         </span>
-        <Row gutter={[24, 16]}>
+        <Row gutter={[24, 36]}>
           <Col xs={24} sm={12} lg={6}>
-            <div className="w-[60%] flex flex-col gap-6">
-              <img src="/logo2.png" alt="Logo" className="" />
-              <p className="text-gray-500 text-lg">
+            <div className="md:w-[60%] flex flex-col gap-6">
+              <img src="/logo2.png" alt="Logo" className="w-[60%]" />
+              <p className="text-gray-500 text-base md:text-lg">
                 Sed ut persiciatis unde omnis natus voluptatem
               </p>
-              <p className="text-xl font-bold">{t('follow us')}</p>
+              <p className="text-base md:text-xl font-semibold">
+                {t('follow us')}
+              </p>
               <div className="flex space-x-4">
                 <Link
                   href="#"
@@ -161,57 +214,37 @@ const Footer: React.FC = () => {
           <Col xs={24} sm={12} lg={5}>
             <h2 className="text-xl font-bold mb-5 pl-2">{t('IT Services')}</h2>
             <ul className="space-y-3 text-lg text-gray-600">
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight className="text-xl" />
-                {t('IT Consultancy')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight className="text-xl" />
-                {t('IT Management')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight className="text-xl" />
-                {t('IT Support')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight className="text-xl" />
-                {t('Cloud Computing')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight className="text-xl" />
-                {t('Cyber Security')}
-              </li>
+              {listColumn1.map((item: Record<string, any>, index: number) => (
+                <li
+                  key={index}
+                  className="flex justify-start gap-2 items-center"
+                >
+                  <CgChevronRight className="text-xl" />
+                  {item.name}
+                </li>
+              ))}
             </ul>
           </Col>
           <Col xs={24} sm={12} lg={5}>
             <h2 className="text-xl font-bold mb-5 pl-2">{t('Support')}</h2>
             <ul className="space-y-3 text-lg text-gray-600">
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight />
-                {t('Forum Support')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight />
-                {t('Help & FAQ')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight />
-                {t('Contact Us')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight />
-                {t('Pricing and Plans')}
-              </li>
-              <li className="flex justify-start gap-2 items-center">
-                <CgChevronRight />
-                {t('Cookies Policy')}
-              </li>
+              {listColumn2.map((item: Record<string, any>, index: number) => (
+                <li
+                  key={index}
+                  className="flex justify-start gap-2 items-center"
+                >
+                  <CgChevronRight className="text-xl" />
+                  {item.name}
+                </li>
+              ))}
             </ul>
           </Col>
 
           <Col xs={24} sm={12} lg={8}>
             <h2 className="text-xl font-bold mb-5">{t('Newsletter')}</h2>
-            <p className="text-gray-500 text-xl">{t('Newsletter desc')}</p>
+            <p className="text-gray-500 text-base md:text-xl">
+              {t('Newsletter desc')}
+            </p>
             <div className="flex items-center my-5 gap-2 rounded-lg border border-gray-300 bg-gray-50 p-2 shadow-sm">
               {/* <MailOutlined className="text-gray-500 text-lg" /> */}
               <Input
@@ -231,9 +264,11 @@ const Footer: React.FC = () => {
           </Col>
         </Row>
       </footer>
-      <div className="flex justify-between text-[#555] mt-20">
-        <div>© 2023 WiaTech - IT Services. All rights reserved.</div>
-        <div className="flex justify-center items-center gap-5">
+      <div className="flex-col md:flex-row justify-between text-[#555] mt-20">
+        <p className="text-center mb-5 md:mb-0">
+          © 2023 WiaTech - IT Services. {t('All rights reserved')}.
+        </p>
+        <div className="flex justify-center items-center gap-5 text-sm md:text-base">
           <Link className="hover:text-blue-600" href="/">
             {t('company')}
           </Link>

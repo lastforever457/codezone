@@ -90,12 +90,12 @@ const Service = () => {
     <div className="bg-[#F6F2ED] mt-24 mb-14 relative">
       <img
         src="/dot-pattern.png"
-        className="absolute w-40 md:w-full rotate-180 opacity-25"
+        className="absolute w-40 md:w-auto rotate-180 opacity-25"
         alt=""
       />
       <img
         src="/dot-pattern.png"
-        className="absolute w-40 md:w-full right-0 transform scale-y-[-1] opacity-25"
+        className="absolute w-40 md:w-auto right-0 transform scale-y-[-1] opacity-25"
         alt=""
       />
       <div className="flex items-center pt-24 justify-center flex-col gap-4 pb-12">
