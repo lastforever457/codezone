@@ -28,7 +28,6 @@
       ]
     }
   ],
-  "compress": true,
   "cleanUrls": true,
   "trailingSlash": false
 }
