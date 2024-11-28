@@ -16,7 +16,7 @@ const MainSection = () => {
       }}
     >
       <div className="max-w-[1440px] mx-auto">
-        <Row className="flex flex-col lg:flex-row">
+        <Row className="flex flex-col  lg:flex-row">
           <Col xs={24} lg={12} className="w-full">
             <div className="text-white flex flex-col md:mt-32">
               <div className="space-y-6 sm:space-y-8">
