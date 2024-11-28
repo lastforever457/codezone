@@ -1,6 +1,5 @@
 'use client';
 
-import useBreakpoint from '@/hooks/use-breakpoint';
 import { Button, Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { FiArrowUpRight } from 'react-icons/fi';
@@ -8,7 +7,6 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const MainSection = () => {
   const { t } = useTranslation();
-  const breakpoint = useBreakpoint();
   return (
     <div
       id="home"
