@@ -42,31 +42,32 @@ const Provide = () => {
     [t]
   );
   return (
-    <div className="py-0 md:py-10 px-5 2xl:px-72">
+    // 2xl:px-72
+    <div className="mx-auto px-4 py-0 md:py-10 container">
       <div
         className={
           'text-center flex flex-col justify-center items-center mb-10'
         }
       >
-        <h4 className="text-blue-500 text-base md:text-xls font-bold">
+        <h4 className="font-bold text-base text-blue-500 md:text-xls">
           {t('What We Provide')}
         </h4>
-        <h2 className="text-2xl md:text-4xl 2xl:text-5xl max-w-[950px] text-center font-bold mt-4">
+        <h2 className="mt-4 max-w-[950px] font-bold text-2xl text-center md:text-4xl 2xl:text-5xl">
           {t('We Run all kinds of IT services that vow your success')}
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-10">
+      <div className="gap-4 gap-y-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         {services.map((service: Record<string, any>, index: number) => (
           <div key={index}>
-            <div className="custom-second-card p-5 rounded-[25vw] lg:rounded-[7vw] shadow-2xl lg:shadow-xl">
-              <div className="border-dashed border-2 rounded-[25vw] lg:rounded-[7vw] px-6 py-14 lg:py-20 text-center">
+            <div className="shadow-2xl lg:shadow-xl custom-second-card p-5 rounded-[25vw] lg:rounded-[7vw]">
+              <div className="border-2 px-6 py-14 lg:py-20 border-dashed rounded-[25vw] lg:rounded-[7vw] text-center">
                 <div className="flex justify-center mb-3">
                   <div className="text-4xl">{service.icon}</div>
                 </div>
-                <h2 className="text-lg font-semibold h-16 md:h-24 text-center flex justify-center items-center">
+                <h2 className="flex justify-center items-center h-16 md:h-24 font-semibold text-center text-lg">
                   {service.title}
                 </h2>
-                <button className="custom-second-button text-white rounded-full p-2 hover:bg-blue-600 focus:outline-none">
+                <button className="hover:bg-blue-600 custom-second-button p-2 rounded-full text-white focus:outline-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

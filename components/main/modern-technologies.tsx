@@ -6,29 +6,30 @@ import { IoLayersOutline } from 'react-icons/io5';
 const ModernTechnologies = () => {
   const { t } = useTranslation();
   return (
-    <div className="px-5 lg:px-0 py-7 2xl:py-16">
-      <div className="flex w-full items-center justify-center">
+    //lg:px-0
+    <div className="px-4 py-7 2xl:py-16">
+      <div className="flex justify-center items-center mx-auto w-full container">
         <Row gutter={[0, 30]}>
           <Col lg={14} xs={24}>
             <div className="w-full lg:h-[792px]">
               <img
                 src="/modern-tech.png"
                 alt=""
-                className="bg-no-repeat w-full h-full bg-contain object-contain"
+                className="bg-contain bg-no-repeat lg:mt-16 w-full h-full object-contain"
               />
             </div>
           </Col>
           <Col
             lg={10}
             xs={24}
-            className="w-full h-full flex justify-center items-center"
+            className="flex justify-center items-center mx-auto w-full h-full container"
           >
-            <div className="flex min-h-[500px] md:h-[80%] justify-center items-center lg:mt-28">
-              <div className="w-full flex flex-col items-start gap-6 md:gap-10 h-full text-white py-10 px-5 2xl:px-20 2xl:py-28 bg-[#020626]">
-                <span className="text-5xl md:text-8xl text-blue-600">
+            <div className="flex justify-center items-center lg:mt-28 md:h-[80%] min-h-[500px]">
+              <div className="flex flex-col items-start gap-6 md:gap-10 bg-[#020626] px-5 2xl:px-20 py-10 2xl:py-28 w-full h-full text-white">
+                <span className="text-5xl text-blue-600 md:text-8xl">
                   <IoLayersOutline />
                 </span>
-                <h1 className="text-xl md:text-3xl font-bold">
+                <h1 className="font-bold text-xl md:text-3xl">
                   {t('modern technologies')}
                 </h1>
                 <p className="text-[#999] text-[11px] md:text-base">

@@ -47,22 +47,23 @@ function TeamComponent() {
   );
 
   return (
-    <div className="px-5 2xl:px-72 py-10 2xl:py-16 mb-10">
+    // 2xl:px-72
+    <div className="mx-auto mb-10 px-4 py-10 2xl:py-16 container">
       <h4
         data-aos="fade-up"
-        className="text-md xl:text-lg 2xl:text-xl text-center text-blue-500 font-bold"
+        className="font-bold text-blue-500 text-center text-md xl:text-lg 2xl:text-xl"
       >
         {t('Meet Our Team')}
       </h4>
       <h2
         data-aos="fade-up"
-        className="text-2xl xl:text-3xl 2xl:text-5xl font-bold text-center mt-2 2xl:mt-4 mb-14"
+        className="mt-2 2xl:mt-4 mb-14 font-bold text-2xl text-center xl:text-3xl 2xl:text-5xl"
       >
         {t('Weve an Exclusive Team Meet our Professionals')}
       </h2>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div className="gap-20 grid grid-cols-1 lg:grid-cols-2 w-full">
         <div data-aos="fade-up">
-          <div className="mt-0 lg:mt-8 space-y-6">
+          <div className="space-y-6 mt-0 lg:mt-8">
             {teamMembers.map((member, index) => (
               <div
                 onMouseEnter={() => handleHighlight(member)}
@@ -71,14 +72,14 @@ function TeamComponent() {
                   highlightedMember.id === member.id && 'hover:border-b-black'
                 }`}
               >
-                <span className="text-blue-500 font-bold text-xl">
+                <span className="font-bold text-blue-500 text-xl">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <h3 className="font-semibold text-lg">{member.name}</h3>
                   <p className="text-gray-500">{member.role}</p>
                 </div>
-                <button className="bg-[#D2A98E] p-2 rounded-full text-white hover:bg-gray-400 transition duration-300">
+                <button className="bg-[#D2A98E] hover:bg-gray-400 p-2 rounded-full text-white transition duration-300">
                   <LuArrowUpRight />
                 </button>
               </div>
@@ -86,16 +87,16 @@ function TeamComponent() {
           </div>
         </div>
 
-        <div className="flex items-center transition-all justify-center gap-3 md:gap-8 lg:items-start">
+        <div className="flex justify-center items-center lg:items-start gap-3 md:gap-8 transition-all">
           <div className="relative">
             <img
               data-aos="zoom-in"
               src={highlightedMember.image}
               alt={highlightedMember.name}
-              className="w-[400px] h-[380px] rounded-md transition-all shadow-lg object-cover"
+              className="shadow-lg rounded-md w-[400px] h-[380px] transition-all object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-4">
-              <h3 className="text-base md:text-2xl font-semibold text-white">
+            <div className="right-0 bottom-0 left-0 absolute bg-black/50 backdrop-blur-sm p-4">
+              <h3 className="font-semibold text-base text-white md:text-2xl">
                 {highlightedMember.name}
               </h3>
               <p className="text-gray-200 text-sm md:text-base">
@@ -103,14 +104,14 @@ function TeamComponent() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-2">
+          <div className="gap-2 grid grid-cols-1">
             {otherMembers.map((member) => (
               <img
                 key={member.id}
                 src={member.image}
                 alt={member.name}
                 onClick={() => handleHighlight(member)}
-                className="w-[120px] h-[120px] object-cover border border-gray-200"
+                className="border-gray-200 border w-[120px] h-[120px] object-cover"
               />
             ))}
           </div>

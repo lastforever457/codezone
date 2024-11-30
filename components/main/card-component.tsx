@@ -60,9 +60,10 @@ function CardComponent() {
     </svg>
   );
 
+  // 2xl:px-72
   return (
-    <div className={'px-5 2xl:px-72 pt-20 pb-0'}>
-      <div className={'mt-[-270px] 2xl:mt-[-230px] mb-24 flex justify-between'}>
+    <div className={'container mx-auto px-4 pt-20 pb-0'}>
+      <div className={'mt-[-270px] 2xl:mt-[-230px] mb-24 '}>
         <Row gutter={[20, 20]}>
           {cards.map((card: Record<string, any>, index: number) => (
             <Col data-aos="fade-up" xs={24} sm={24} md={8} lg={8} key={index}>
@@ -71,8 +72,8 @@ function CardComponent() {
                   'bg-white shadow-xl custom-card lg:shadow-none rounded-xl p-10 transition-all cursor-pointer border-b-blue-500 gap-3 border-b-4 min-h-[350px] hover:text-white hover:border-b-white h-full flex flex-col justify-center items-start'
                 }
               >
-                <div className="mask-bg-iconbox z-20">{svg}</div>
-                <span className="z-20 ">{card.icon}</span>
+                <div className="z-20 mask-bg-iconbox">{svg}</div>
+                <span className="z-20">{card.icon}</span>
                 <h3 className={'z-20 text-xl mb-2 font-bold'}>{card.title}</h3>
                 <p className={'z-20 m-0'}>{card.description}</p>
                 <button
@@ -87,7 +88,7 @@ function CardComponent() {
           ))}
         </Row>
       </div>
-      <div className={'mt-20 flex justify-center gap-14'}>
+      <div className={'mt-20 flex justify-center gap-14 container'}>
         <Row gutter={[20, 0]}>
           <Col
             xs={24}
@@ -96,7 +97,7 @@ function CardComponent() {
             lg={8}
             data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
           >
-            <div className="relative overflow-hidden rounded-full">
+            <div className="relative rounded-full overflow-hidden">
               <img
                 src="/men.jpg"
                 alt="Custom Shaped"
@@ -111,8 +112,8 @@ function CardComponent() {
             lg={8}
             data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
           >
-            <div className="flex lg:justify-center items-center w-full h-full lg:pl-5">
-              <div className="p-2 flex flex-col justify-between items-start">
+            <div className="flex lg:justify-center items-center lg:pl-5 w-full h-full">
+              <div className="flex flex-col justify-between items-start p-2">
                 <h4
                   className={
                     'font-bold mt-16 mb-2 lg:mb-5 text-lg lg:text-2xl text-blue-500'

@@ -40,9 +40,11 @@ const Page = () => {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div>
+    <div className="">
       <Header />
-      <MainSection />
+      <div className="">
+        <MainSection />
+      </div>
       <SwiperLeft />
       <CardComponent />
       <Service />

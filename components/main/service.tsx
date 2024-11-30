@@ -88,34 +88,34 @@ const Service = () => {
   );
 
   return (
-    <div className="bg-[#F6F2ED] mt-24 mb-14 relative">
+    <div className="relative bg-[#F6F2ED] mt-24 mb-14">
       <img
         src="/dot-pattern.png"
-        className="absolute w-32 md:w-40 lg:w-auto rotate-180 opacity-25"
+        className="absolute opacity-25 w-32 md:w-40 lg:w-auto rotate-180"
         alt=""
       />
       <img
         src="/dot-pattern.png"
-        className="absolute w-32 lg:w-auto right-0 transform scale-y-[-1] opacity-25"
+        className="right-0 absolute opacity-25 w-32 lg:w-auto transform scale-y-[-1]"
         alt=""
       />
-      <div className="flex items-center pt-24 justify-center flex-col gap-4 pb-12">
+      <div className="flex flex-col justify-center items-center gap-4 pt-24 pb-12">
         <h4
           data-aos="fade-up"
-          className="text-blue-500 text-xl font-bold lg:text-2xl"
+          className="font-bold text-blue-500 text-xl lg:text-2xl"
         >
           {t('Popular Services')}
         </h4>
         <h2
           data-aos="fade-up"
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center"
+          className="font-bold text-3xl text-center md:text-4xl lg:text-5xl"
         >
           {t('Services We Provide')}
         </h2>
       </div>
-
-      <div className="gap-6 pb-24 px-5 lg:px-32 2xl:px-72">
-        <Row gutter={[2, 2]}>
+      {/*lg:px-32 2xl:px-72 */}
+      <div className="gap-6 mx-auto px-4 pb-24 container">
+        <Row gutter={[3, 3]}>
           {services.map((service: Record<string, any>, index: number) => (
             <Col xs={24} sm={12} md={12} lg={8} xl={8} key={service.id}>
               <div
@@ -137,11 +137,11 @@ const Service = () => {
                         </div>
                       </Col>
                       <Col span={8}>
-                        <div className="w-full h-full flex justify-end items-start">
+                        <div className="flex justify-end items-start w-full h-full">
                           <motion.span
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.2 }}
-                            className="text-[5rem] md:text-[6rem] font-bold text-white"
+                            className="font-bold text-[5rem] text-white md:text-[6rem]"
                             style={{
                               color: 'rgba(255, 255, 255, 0.7)',
                             }}
@@ -158,7 +158,7 @@ const Service = () => {
                       icon={<MdKeyboardArrowRight />}
                       iconPosition="end"
                       type="text"
-                      className="text-white font-bold z-50 pl-0 mt-5 cursor-pointer hover:translate-x-2 transition-transform duration-300 ease-in-out hover:text-white hover:scale-105"
+                      className="z-50 mt-5 pl-0 font-bold text-white hover:text-white transition-transform hover:translate-x-2 duration-300 cursor-pointer ease-in-out hover:scale-105"
                     >
                       {t('read more')}
                     </Button>{' '}
@@ -177,16 +177,16 @@ const Service = () => {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col gap-10">
                     <div className="flex flex-col gap-2">
-                      <span className="text-blue-600 font-bold">
+                      <span className="font-bold text-blue-600">
                         0{index + 1}
                       </span>
-                      <h3 className="text-xl font-bold">{service.title}</h3>
+                      <h3 className="font-bold text-xl">{service.title}</h3>
                     </div>
                     <span className="text-6xl">{service.icon}</span>
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <Button className="py-16 rounded-3xl bg-[#F6F2ED]">
+                  <Button className="bg-[#F6F2ED] py-16 rounded-3xl">
                     <LuArrowUpRight />
                   </Button>
                 </div>
@@ -195,28 +195,29 @@ const Service = () => {
           ))}
         </Row>
       </div>
-      <div className="relative">
+      <div className="relative mx-auto px-4 container">
         <img
           src="/pattern.png"
           alt=""
-          className="absolute top-0 left-0 h-[400px] w-full"
+          className="top-0 left-0 absolute w-full h-[400px]"
           color="#000"
         />
         <Row>
           <Col xs={24} sm={24} md={24} lg={11}>
-            <div className="py-5 2xl:py-16 pl-5 2xl:pl-72 pr-10">
-              <h4 className="text-xl text-blue-500 font-bold">
+            {/* pl-5 2xl:pl-72 */}
+            <div className="py-5 2xl:py-16 pr-10">
+              <h4 className="font-bold text-blue-500 text-xl">
                 {t('Best IT Solutions')}
               </h4>
               <h2
                 data-aos="fade-up"
-                className="text-3xl lg:text-5xl font-bold mt-6"
+                className="mt-6 font-bold text-3xl lg:text-5xl"
               >
                 {t('We Prominent Truly IT Your solutions')}
               </h2>
               <p
                 data-aos="fade-up"
-                className="text-gray-500 mt-8 text-sm lg:text-[16px]"
+                className="mt-8 text-gray-500 text-sm lg:text-[16px]"
               >
                 We denounce with righteous indignation and like men who are so
                 beguiled and demoralized by the charms of pleasure of the
@@ -224,7 +225,7 @@ const Service = () => {
               </p>
               <div
                 data-aos="fade-up"
-                className="flex justify-center md:justify-start gap-5 items-center mt-10"
+                className="flex justify-center md:justify-start items-center gap-5 mt-10"
               >
                 <div className="flex flex-col justify-center items-center">
                   <Progress size={'small'} type="circle" percent={68} />
@@ -239,14 +240,14 @@ const Service = () => {
               </div>
               <div
                 data-aos="fade-up"
-                className="flex flex-col gap-5 md:flex-row justify-start lg:justify-center md:items-center mt-10 space-x-4"
+                className="flex md:flex-row flex-col justify-start lg:justify-center md:items-center gap-5 space-x-4 mt-10"
               >
                 <div>
                   <Button
                     iconPosition="end"
                     icon={<MdOutlineKeyboardArrowRight />}
                     type="primary"
-                    className="px-12 py-5 text-white rounded-lg font-bold hover:bg-blue-700 transition duration-300"
+                    className="hover:bg-blue-700 px-12 py-5 rounded-lg font-bold text-white transition duration-300"
                   >
                     {t('read more')}
                   </Button>
@@ -258,18 +259,18 @@ const Service = () => {
                         key={index}
                         src={`/customer-${index + 1}.jpg`}
                         alt="Customer"
-                        className="hover:scale-110 w-10 h-10 rounded-full border-2 border-white"
+                        className="hover:scale-110 border-2 border-white rounded-full w-10 h-10"
                       />
                     ))}
                   </div>
-                  <span className="ml-4 text-lg font-medium">
+                  <span className="ml-4 font-medium text-lg">
                     10m+ {t('Customers')}
                   </span>
                 </div>
               </div>
             </div>
           </Col>
-          <Col xs={24} sm={24} md={24} lg={13} className="px-5">
+          <Col xs={24} sm={24} md={24} lg={13}>
             <div
               className={
                 'bg-[url(/feature.jpg)] bg-center bg-cover object-contain px-0 py-10 lg:px-16 lg:pt-64 lg:pb-32 lg:mb-10'
@@ -298,48 +299,50 @@ const Service = () => {
           </Col>
         </Row>
       </div>
-      <Swiper
-        navigation={false}
-        className="w-full"
-        loop
-        spaceBetween={0}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-          stopOnLastSlide: false,
-          reverseDirection: false,
-        }}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-      >
-        {new Array(10).fill(0).map((_, index: number) => (
-          <SwiperSlide key={index}>
-            <div className="flex justify-center gap-2 w-full items-center 2xl:h-44 lg:h-32 text-3xl font-semibold">
-              <div className="flex justify-center items-center">
-                <span className="text-blue-600">
-                  <FaStarOfLife />
-                </span>
-                <p className="relative group cursor-pointer hover:text-blue-700">
-                  {(index + 1) % 2 === 0
-                    ? t('Data Security')
-                    : t('Cyber Security')}
-                  <span className="absolute left-0 bottom-0 h-[5px] w-0 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
-                </p>
+      <div className="mx-auto px-4 container">
+        <Swiper
+          navigation={false}
+          className="w-full"
+          loop
+          spaceBetween={0}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            stopOnLastSlide: false,
+            reverseDirection: false,
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {new Array(10).fill(0).map((_, index: number) => (
+            <SwiperSlide key={index}>
+              <div className="flex justify-center items-center gap-2 w-full h-32 2xl:h-44 font-semibold text-3xl">
+                <div className="flex justify-center items-center">
+                  <span className="text-blue-600">
+                    <FaStarOfLife />
+                  </span>
+                  <p className="relative hover:text-blue-700 cursor-pointer group">
+                    {(index + 1) % 2 === 0
+                      ? t('Data Security')
+                      : t('Cyber Security')}
+                    <span className="group-hover:w-full bottom-0 left-0 absolute bg-blue-600 w-0 h-[5px] transition-all duration-500"></span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
