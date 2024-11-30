@@ -234,7 +234,7 @@ const Footer: React.FC = () => {
             </Col>
           </Row>
         </footer>
-        <div className="flex md:flex-row xl:flex-row flex-col justify-between items-center mt-20 pb-10 text-[#555]">
+        <div className="flex lg:flex-row flex-col justify-between items-center mt-20 pb-10 text-[#555]">
           <p className="mb-5 2xl:mb-0 text-center text-sm md:text-base">
             © 2023 WiaTech - IT Services. {t('All rights reserved')}.
           </p>

@@ -11,7 +11,7 @@ const MainSection = () => {
   return (
     <div
       id="home"
-      className="relative bg-black bg-cover bg-no-repeat bg-center px-4 2xl:py-52 pt-16 sm:pt-20 lg:pt-10 2xl:pt-32 w-full h-[70vh] xl:h-screen"
+      className="relative bg-black bg-cover bg-no-repeat bg-center px-4 2xl:py-52 pt-16 sm:pt-20 lg:pt-10 2xl:pt-32 w-full h-[70vh] xl:h-fit"
       style={{
         backgroundImage: `url('/main.jpg')`,
       }}
