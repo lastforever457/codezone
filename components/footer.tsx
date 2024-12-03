@@ -203,7 +203,7 @@ const Footer: React.FC = () => {
             </Col>
 
             <Col xs={24} sm={12} lg={8}>
-              <h2 className="mb-3 md:mb-5 font-bold text-base md:text-xl">
+              <h2 className="mb-3 md:mb-5 font-bold text-base md:text-2xl">
                 {t('Newsletter')}
               </h2>
               <p className="text-gray-500 text-sm md:text-xl">
@@ -238,7 +238,7 @@ const Footer: React.FC = () => {
           <p className="mb-5 2xl:mb-0 text-center text-sm md:text-base">
             © 2023 Algorismic - IT Services. {t('All rights reserved')}.
           </p>
-          <div className="flex justify-center items-center gap-5 text-sm md:text-base">
+          <div className="flex justify-center items-center gap-5 text-[8px] md:text-base">
             <Link className="hover:text-blue-600" href="/">
               {t('company')}
             </Link>
