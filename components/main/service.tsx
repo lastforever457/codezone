@@ -45,43 +45,37 @@ const Service = () => {
         id: 1,
         title: t('UX/UI Design'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_ux'),
       },
       {
         id: 2,
         title: t('IT Management'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_management'),
       },
       {
         id: 3,
         title: t('Data Security'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_security'),
       },
       {
         id: 4,
         title: t('Infrastructure Plan'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_infrastructure'),
       },
       {
         id: 5,
         title: t('Firewall Advancement'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_firewall'),
       },
       {
         id: 6,
         title: t('Desktop Computing'),
         icon: <IoMdLaptop />,
-        description:
-          'Sed ut perspiciatis unde omnis iste natus voluptatem accusantium laudantium',
+        description: t('service_desc_desktop'),
       },
     ],
     [t]
@@ -123,7 +117,7 @@ const Service = () => {
                   isHovering === index + 1
                     ? 'flex z-50 opacity-100'
                     : 'hidden opacity-0'
-                } absolute top-1/2 left-1/2 text-white px-5 py-10 md:p-10 w-full h-[120%] md:h-[120%] bg-blue-600 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none`}
+                } absolute top-1/2 left-1/2 text-white px-5 py-10 md:p-10 w-full h-[130%] bg-blue-600 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none`}
               >
                 <div className="flex flex-col justify-between items-start w-full h-full">
                   <div className="w-full">
@@ -217,14 +211,6 @@ const Service = () => {
               >
                 {t('We Prominent Truly IT Your solutions')}
               </h2>
-              <p
-                data-aos="fade-up"
-                className="mt-8 text-gray-500 text-sm lg:text-[16px]"
-              >
-                We denounce with righteous indignation and like men who are so
-                beguiled and demoralized by the charms of pleasure of the
-                moment, so blinded by desire foresee the pain
-              </p>
               <div
                 data-aos="fade-up"
                 className="flex justify-center md:justify-start items-center gap-5 mt-10"
