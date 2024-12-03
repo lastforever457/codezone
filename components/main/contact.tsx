@@ -5,10 +5,6 @@ import { FaUser } from 'react-icons/fa';
 import { MdKeyboardArrowRight, MdOutlineMailOutline } from 'react-icons/md';
 
 const Contact = () => {
-  const onFinish = (values: any) => {
-    console.log('Form Values:', values);
-  };
-
   return (
     // lg:px-5 2xl:px-72
     <div className="bg-[#0B1120] 2xl:py-36 text-white">
