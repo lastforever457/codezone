@@ -3,7 +3,7 @@
 import useBreakpoint from '@/hooks/use-breakpoint';
 import useHeaderMenus from '@/hooks/use-header-menus';
 import useScroll from '@/hooks/use-scroll';
-import { i18n } from '@/i18n/i18n';
+import i18n from '@/i18n/i18n';
 import { CloseOutlined } from '@ant-design/icons';
 import {
   Button,
@@ -89,6 +89,18 @@ const Header = () => {
       ),
     },
   ];
+
+  const navigationLinks = useMemo(
+    () => [
+      { label: t('Company'), href: '/' },
+      { label: t('IT Management'), href: '/' },
+      { label: t('Help Center'), href: '/' },
+      { label: t('Portfolio'), href: '/' },
+      { label: t('Blog'), href: '/' },
+    ],
+    [t]
+  );
+
   return (
     <>
       <header
@@ -97,7 +109,7 @@ const Header = () => {
         } transition-all bg-cover bg-center`}
         style={{ zIndex: 150, borderBottom: '1px solid #999' }}
       >
-        <div className="w-full h-full flex justify-between items-center pl-5 md:pl-10">
+        <div className="flex justify-between items-center pl-5 md:pl-10 w-full h-full">
           <img
             src="/logo.png"
             alt=""
@@ -139,7 +151,7 @@ const Header = () => {
             >
               <FaSearch size={20} />
             </button>
-            <Dropdown className="hidden 2xl:flex" menu={{ items }}>
+            <Dropdown className="2xl:flex hidden" menu={{ items }}>
               <button
                 style={{ borderLeft: '1px solid #999' }}
                 className={
@@ -168,50 +180,22 @@ const Header = () => {
           </div>
         </div>
         <Drawer open={open} onClose={() => setOpen(false)}>
-          <div className="flex flex-col pl-5">
-            <Link
-              className="hover:pl-2 hover:text-blue-600 text-md transition-all"
-              href={'/'}
-            >
-              {t('Company')}
-            </Link>
-            <Link
-              className="hover:pl-2 hover:text-blue-600 text-md transition-all"
-              href={'/'}
-            >
-              {t('IT Management')}
-            </Link>
-            <Link
-              className="hover:pl-2 hover:text-blue-600 text-md transition-all"
-              href={'/'}
-            >
-              {t('Help Center')}
-            </Link>
-            <Link
-              className="hover:pl-2 hover:text-blue-600 text-md transition-all"
-              href={'/'}
-            >
-              {t('Portfolio')}
-            </Link>
-            <Link
-              className="hover:pl-2 hover:text-blue-600 text-md transition-all"
-              href={'/'}
-            >
-              {t('Blog')}
-            </Link>
+          <div className="flex flex-col gap-2 pl-5">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.label}
+                className="hover:pl-2 hover:font-bold text-base text-md hover:text-blue-600 transition-all"
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-          <div className="flex flex-col pl-5 mt-10">
-            <p>
-              Pellentesque mollis nec orci id tincidunt. Sed mollis risus eu
-              nisi aliquet, sit amet fermentum justo dapibus.
-            </p>
-          </div>
-          <div className="mt-10 flex flex-col pl-5 text-[#444]">
-            <h2 className="font-bold text-xl text-black">{t('contact')}</h2>
-            <p>55 Main Street, 2nd block</p>
-            <p>Malborne, Australia</p>
-            <p>support@gmail.com</p>
-            <p>+880 (123) 456 88</p>
+          <div className="flex flex-col mt-10 pl-5 text-[#444]">
+            <h2 className="font-bold text-2xl text-black">{t('contact')}</h2>
+            <p className="mt-1.5 text-base">{t('Uzbekistan, Tashkent')}</p>
+            <p className="mt-1.5 text-base">algorismic@gmail.com</p>
+            <p className="mt-1.5 text-base">+998 (97) 888 10 27</p>
           </div>
           <div className="flex flex-col mt-10 pl-5">
             <p className="font-bold text-lg">{t('follow us')}</p>
@@ -219,7 +203,7 @@ const Header = () => {
               <Tooltip title="Facebook">
                 <Link href="https://facebook.com" target="_blank">
                   <Button
-                    className="text-white bg-blue-600"
+                    className="bg-blue-600 text-white"
                     shape="circle"
                     type="link"
                   >
@@ -230,7 +214,7 @@ const Header = () => {
               <Tooltip title="Twitter">
                 <Link href="https://twitter.com" target="_blank">
                   <Button
-                    className="text-white bg-blue-600"
+                    className="bg-blue-600 text-white"
                     shape="circle"
                     type="link"
                   >
@@ -241,7 +225,7 @@ const Header = () => {
               <Tooltip title="LinkedIn">
                 <Link href="https://linkedin.com" target="_blank">
                   <Button
-                    className="text-white bg-blue-600"
+                    className="bg-blue-600 text-white"
                     shape="circle"
                     type="link"
                   >
@@ -252,7 +236,7 @@ const Header = () => {
               <Tooltip title="Instagram">
                 <Link href="https://instagram.com" target="_blank">
                   <Button
-                    className="text-white bg-blue-600"
+                    className="bg-blue-600 text-white"
                     shape="circle"
                     type="link"
                   >
@@ -271,16 +255,16 @@ const Header = () => {
           open={openSm}
           closeIcon={<CloseOutlined className="text-white" />}
         >
-          <div className="flex w-full justify-around items-center mb-5">
+          <div className="flex justify-around items-center mb-5 w-full">
             <div
-              className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
+              className="flex justify-center items-center gap-1 hover:bg-gray-800 hover:shadow-md p-5 rounded-lg transition-colors duration-300 cursor-pointer"
               onClick={() => i18n.changeLanguage('uz')}
             >
               <img src="/uzb.png" width={30} alt="uzbek" />
               <span>O'zbekcha</span>
             </div>
             <div
-              className="cursor-pointer p-5 flex justify-center items-center gap-1 hover:bg-gray-800 transition-colors duration-300 rounded-lg hover:shadow-md"
+              className="flex justify-center items-center gap-1 hover:bg-gray-800 hover:shadow-md p-5 rounded-lg transition-colors duration-300 cursor-pointer"
               onClick={() => i18n.changeLanguage('ru')}
             >
               <img src="/rus.png" width={30} alt="russian" />

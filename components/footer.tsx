@@ -134,9 +134,9 @@ const Footer: React.FC = () => {
           <Row gutter={[24, 36]}>
             <Col xs={24} sm={12} lg={6}>
               <div className="flex flex-col gap-6 md:w-[60%]">
-                <img src="/logo2.png" alt="Logo" className="w-[60%]" />
+                <img src="/logo2.png" alt="Logo" className="w-[70%]" />
                 <p className="text-base text-gray-500 md:text-lg">
-                  Sed ut persiciatis unde omnis natus voluptatem
+                  {t('footer slogan')}
                 </p>
                 <p className="font-semibold text-base md:text-xl">
                   {t('follow us')}
@@ -236,7 +236,7 @@ const Footer: React.FC = () => {
         </footer>
         <div className="flex lg:flex-row flex-col justify-between items-center mt-20 pb-10 text-[#555]">
           <p className="mb-5 2xl:mb-0 text-center text-sm md:text-base">
-            © 2023 WiaTech - IT Services. {t('All rights reserved')}.
+            © 2023 Algorismic - IT Services. {t('All rights reserved')}.
           </p>
           <div className="flex justify-center items-center gap-5 text-sm md:text-base">
             <Link className="hover:text-blue-600" href="/">

@@ -12,8 +12,11 @@
   "explore our services": "Xizmatlarimiz bilan tanishing",
   "follow us": "Bizni kuzating",
   "cost effectiveness": "Narx effektivligi",
+  "cost_effectiveness_desc": "Bizning IT yechimlarimiz xarajatlarni optimallashtirish va biznes samaradorligini oshirish imkonini beradi",
   "Innovative Technology": "Innovativ texnologiyalar",
+  "innovative_technology_desc": "Zamonaviy texnologiyalar va innovatsion yondashuvlar orqali raqamli transformatsiyani amalga oshiramiz",
   "Industry Expertise": "Ishlab chiqarish sohasidagi mutaxassislik",
+  "industry_expertise_desc": "Ko'p yillik tajribamiz asosida turli sohalardagi murakkab muammolarni professional darajada hal qilamiz",
   "We offer": "Biz sizni xarajatlarni kamaytirish va yaxshilashga yordam beradigan IT yechimlarni taklif qilamiz",
   "read more": "Batafsil o'qish",
   "about company": "Kompaniya haqida",
@@ -51,7 +54,8 @@
   "IT Manager": "IT menejer",
   "Meet Our Team": "Jamoamiz bilan tanishing",
   "Weve an Exclusive Team Meet our Professionals": "Bizda eksklyuziv jamoa bor, jamoamizning professionallari bilan tanishing",
-  "modern technologies": "Zamonaviy texnologiyalarni rivojlantirish va innovatsion rag'batlar",
+  "modern technologies": "Zamonaviy texnologiyalar",
+  "modern_technologies_desc": "Biz raqamli davrda biznesni rivojlantirish uchun ilg'or texnologik yechimlarni taqdim etamiz. Bizning innovatsion yondashuvlarimiz va zamonaviy vositalarimiz biznesingizning samarali raqamli transformatsiyasini ta'minlaydi",
   "View Details": "Batafsil ko'rish",
   "blogs": "So'ngi yangiliklar va bloglar",
   "Read Blogs": "Bizning so'nggi yangiliklar va bloglarimizni o'qing",
@@ -104,5 +108,7 @@
   "All rights reserved": "Barcha huquqlar himoyalangan",
   "Help Center": "Yordam markazi",
   "Portfolio": "Portfolio",
-  "Blog": "Blog"
+  "Blog": "Blog",
+  "footer slogan": "Butun dunyo bo’ylab dasturchilarni yetishtirib chiqaradigan onlayn akademiya.",
+  "Uzbekistan, Tashkent": "O'zbekiston, Toshkent"
 }

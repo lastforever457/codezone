@@ -6,9 +6,17 @@
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { 
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": false
+    }],
     "@typescript-eslint/no-explicit-any": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "no-unused-vars": "off",
+    "import/no-unused-modules": ["error", {
+      "unusedExports": true
+    }]
   },
   "settings": {
     "react": {

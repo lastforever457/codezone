@@ -33,9 +33,7 @@ const ModernTechnologies = () => {
                   {t('modern technologies')}
                 </h1>
                 <p className="text-[#999] text-[11px] md:text-base">
-                  We denounce with righteous indignation and like men who are
-                  beguiled and demoralized by the charms of pleasure of the
-                  moment, so blinded by desire foresee the pain
+                  {t('modern_technologies_desc')}.
                 </p>
                 <Button
                   icon={<BiChevronRight />}

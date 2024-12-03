@@ -1,11 +1,10 @@
 import { MailOutlined, PhoneOutlined } from '@ant-design/icons';
-import { Button, Col, Form, Input, Row, Select } from 'antd';
+import { Col, Row } from 'antd';
 import { t } from 'i18next';
-import { BiChevronRight } from 'react-icons/bi';
+import { FaUser } from 'react-icons/fa';
+import { MdKeyboardArrowRight, MdOutlineMailOutline } from 'react-icons/md';
 
 const Contact = () => {
-  const { Option } = Select;
-
   const onFinish = (values: any) => {
     console.log('Form Values:', values);
   };
@@ -32,7 +31,7 @@ const Contact = () => {
                   <div className="flex flex-col gap-0.5 sm:gap-1">
                     <p className="text-base sm:text-lg">{t('callInquiry')}</p>
                     <span className="font-semibold text-white text-xl sm:text-2xl lg:text-2xl">
-                      +236 (456) 896 22
+                      +998 (97) 888 10 27
                     </span>
                   </div>
                 </div>
@@ -57,56 +56,64 @@ const Contact = () => {
                 <p className="mb-6 text-base text-gray-500 lg:text-xl">
                   {t('helpDescription')}
                 </p>
-                <Form onFinish={onFinish} className="w-full">
-                  <Row gutter={[16, 10]}>
-                    <Col span={12}>
-                      <Form.Item name="name" rules={[{ required: true }]}>
-                        <Input placeholder={t('form.name')} />
-                      </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                      <Form.Item
-                        name="email"
-                        rules={[{ required: true, type: 'email' }]}
-                      >
-                        <Input placeholder={t('form.email')} />
-                      </Form.Item>
-                    </Col>
-                    <Col span={24}>
-                      <Form.Item name="service" rules={[{ required: true }]}>
-                        <Select placeholder={t('form.service')}>
-                          <Option value="webDevelopment">
-                            {t('form.webDevelopment')}
-                          </Option>
-                          <Option value="mobileApp">
-                            {t('form.mobileApp')}
-                          </Option>
-                          <Option value="uiUxDesign">
-                            {t('form.uiUxDesign')}
-                          </Option>
-                        </Select>
-                      </Form.Item>
-                    </Col>
-                    <Col span={24}>
-                      <Form.Item name="message">
-                        <Input.TextArea rows={4} />
-                      </Form.Item>
-                    </Col>
-                    <Col span={24}>
-                      <div className="flex justify-center items-center w-full">
-                        <Button
-                          type="primary"
-                          htmlType="submit"
-                          className="px-4 md:px-6 py-3 md:py-5 rounded-xl text-sm md:text-base lg:text-xl"
-                          icon={<BiChevronRight />}
-                          iconPosition="end"
-                        >
-                          {t('form.sendButton')}
-                        </Button>
-                      </div>
-                    </Col>
-                  </Row>
-                </Form>
+                <form className="w-full">
+                  <div className="gap-4 grid grid-cols-1 sm:grid-cols-2">
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder="Name"
+                        required
+                        className="px-4 py-3 border rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <span className="top-1/2 right-4 absolute text-gray-400 -translate-y-1/2">
+                        <FaUser />
+                      </span>
+                    </div>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        className="px-4 py-3 border rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <span className="top-1/2 right-4 absolute text-gray-400 -translate-y-1/2">
+                        <MdOutlineMailOutline />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="relative mt-4">
+                    <select
+                      required
+                      className="bg-white px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-500 w-full appearance-none focus:outline-none"
+                    >
+                      <option value="" selected>
+                        Choose Services
+                      </option>
+                      <option value="webDevelopment">Web Development</option>
+                      <option value="mobileApp">Mobile App</option>
+                      <option value="uiUxDesign">UI/UX Design</option>
+                    </select>
+                    <span className="top-1/2 right-4 absolute text-gray-400 -translate-y-1/2 pointer-events-none">
+                      <MdKeyboardArrowRight className="rotate-90" />
+                    </span>
+                  </div>
+                  <div className="mt-4">
+                    <textarea
+                      rows={4}
+                      placeholder="Message"
+                      className="px-4 py-2 border rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    ></textarea>
+                  </div>
+                  <div className="flex justify-center mt-6">
+                    <button
+                      type="submit"
+                      className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg text-white"
+                    >
+                      Send Message Us
+                      <MdKeyboardArrowRight />
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </Col>

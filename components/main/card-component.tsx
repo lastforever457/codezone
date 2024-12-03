@@ -20,25 +20,19 @@ function CardComponent() {
       {
         id: 1,
         title: t('cost effectiveness'),
-        description: t(
-          'We offer It Solution that help you reduce costs and improve'
-        ),
+        description: t('cost_effectiveness_desc'),
         icon: <GiReceiveMoney size={80} />,
       },
       {
         id: 2,
         title: t('Innovative Technology'),
-        description: t(
-          'We offer It Solution that help you reduce costs and improve'
-        ),
+        description: t('innovative_technology_desc'),
         icon: <MdSettingsBrightness size={80} />,
       },
       {
         id: 3,
         title: t('Industry Expertise'),
-        description: t(
-          'We offer It Solution that help you reduce costs and improve'
-        ),
+        description: t('industry_expertise_desc'),
         icon: <FaUsersSlash size={80} />,
       },
     ],
@@ -74,7 +68,9 @@ function CardComponent() {
               >
                 <div className="z-20 mask-bg-iconbox">{svg}</div>
                 <span className="z-20">{card.icon}</span>
-                <h3 className={'z-20 text-xl mb-2 font-bold'}>{card.title}</h3>
+                <h3 className={'z-20 text-xl mb-2 mt-3 font-bold'}>
+                  {card.title}
+                </h3>
                 <p className={'z-20 m-0'}>{card.description}</p>
                 <button
                   className={
@@ -173,7 +169,7 @@ function CardComponent() {
             lg={8}
             data-aos={maxScreens.includes(breakpoint) ? 'fade-up' : ''}
           >
-            <div className={''}>
+            <div className={'flex flex-col justify-center h-full'}>
               <h1
                 className={
                   'pr-5 text-xl lg:text-2xl mt-10 lg:mt-16 mb-5 font-bold'
@@ -181,15 +177,10 @@ function CardComponent() {
               >
                 {t('We’ve 25+ Years Of Experience In Tech Services')}
               </h1>
-              <span className={'text-gray-500 mt-5 text-md text-justify'}>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium totam rem aperiam, eaque epsa
-                inventore
-              </span>
-              <Divider className={'my-5 md:my-10 lg:my-14'} />
+              <Divider className={'my-3 md:my-10 lg:my-5'} />
               <div
                 className={
-                  'flex gap-5 lg:gap-0 justify-start lg:justify-between items-center'
+                  'flex gap-5 md:mb-36 lg:gap-0 justify-start lg:justify-between items-center'
                 }
               >
                 <div>
