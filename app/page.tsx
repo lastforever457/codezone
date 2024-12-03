@@ -34,29 +34,22 @@ const TeamComponent = dynamic(() => import('@/components/main/team'), {
 });
 
 const Page = () => {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    if (typeof window !== 'undefined') {
+      AOS.init({ duration: 1000 });
+    }
   }, []);
+
   return (
-    <div className="">
-      <Header />
-      <div className="">
-        <MainSection />
-      </div>
-      <SwiperLeft />
-      <CardComponent />
-      <Service />
-      <TeamComponent />
+    <main>
+      <MainSection />
       <ModernTechnologies />
+      <Service />
       <Provide />
+      <TeamComponent />
       <Blog />
       <Contact />
-      <Footer />
-    </div>
+    </main>
   );
 };
 
