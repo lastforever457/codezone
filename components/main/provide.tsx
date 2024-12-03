@@ -49,10 +49,10 @@ const Provide = () => {
           'text-center flex flex-col justify-center items-center mb-10'
         }
       >
-        <h4 className="font-bold text-base text-blue-500 md:text-xls">
+        <h4 className="font-bold text-base text-blue-500 md:text-xl">
           {t('What We Provide')}
         </h4>
-        <h2 className="mt-4 max-w-[950px] font-bold text-2xl text-center md:text-4xl 2xl:text-5xl">
+        <h2 className="mt-4 max-w-[950px] font-bold text-2xl text-center md:text-4xl 2xl:text-5xl leading-snug lg:leading-loose">
           {t('We Run all kinds of IT services that vow your success')}
         </h2>
       </div>

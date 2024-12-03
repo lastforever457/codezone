@@ -19,7 +19,7 @@ const Contact = () => {
               <h3 className="mb-2 sm:mb-4 font-semibold text-base text-blue-500 sm:text-lg lg:text-base">
                 {t('workInquiry')}
               </h3>
-              <h1 className="mb-2 sm:mb-4 max-w-[90%] font-bold text-3xl sm:text-4xl md:text-3xl lg:text-4xl">
+              <h1 className="mb-2 sm:mb-4 max-w-[90%] font-bold text-3xl sm:text-4xl md:text-3xl lg:text-4xl leading-snug sm:leading-tight">
                 {t('letsWork')}
               </h1>
               <p className="mb-4 sm:mb-6 text-base text-gray-400 sm:text-lg md:text-base">

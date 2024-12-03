@@ -29,7 +29,7 @@ const ModernTechnologies = () => {
                 <span className="text-5xl text-blue-600 md:text-8xl">
                   <IoLayersOutline />
                 </span>
-                <h1 className="font-bold text-xl md:text-3xl">
+                <h1 className="font-bold text-xl md:text-3xl leading-normal md:leading-relaxed">
                   {t('modern technologies')}
                 </h1>
                 <p className="text-[#999] text-[11px] md:text-base">

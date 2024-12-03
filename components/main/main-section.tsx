@@ -27,7 +27,7 @@ const MainSection = () => {
                     {t('5m')}.
                   </p>
                 </div>
-                <h1 className="max-w-[650px] font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
+                <h1 className="max-w-[650px] font-bold text-3xl sm:text-4xl md:text-5xl leading-snug sm:leading-tight md:leading-tight">
                   {t('main title')}
                 </h1>
                 <p className="text-base sm:text-lg xl:text-xl">

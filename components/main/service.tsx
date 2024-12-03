@@ -102,13 +102,13 @@ const Service = () => {
       <div className="flex flex-col justify-center items-center gap-4 pt-24 pb-12">
         <h4
           data-aos="fade-up"
-          className="font-bold text-blue-500 text-xl lg:text-2xl"
+          className="font-bold text-blue-500 text-xl lg:text-2xl leading-relaxed"
         >
           {t('Popular Services')}
         </h4>
         <h2
           data-aos="fade-up"
-          className="font-bold text-3xl text-center md:text-4xl lg:text-5xl"
+          className="font-bold text-3xl text-center md:text-4xl lg:text-5xl leading-snug md:leading-tight"
         >
           {t('Services We Provide')}
         </h2>
@@ -180,7 +180,9 @@ const Service = () => {
                       <span className="font-bold text-blue-600">
                         0{index + 1}
                       </span>
-                      <h3 className="font-bold text-xl">{service.title}</h3>
+                      <h3 className="font-bold text-xl leading-relaxed">
+                        {service.title}
+                      </h3>
                     </div>
                     <span className="text-6xl">{service.icon}</span>
                   </div>
@@ -206,12 +208,12 @@ const Service = () => {
           <Col xs={24} sm={24} md={24} lg={11}>
             {/* pl-5 2xl:pl-72 */}
             <div className="py-5 2xl:py-16 pr-10">
-              <h4 className="font-bold text-blue-500 text-xl">
+              <h4 className="font-bold text-blue-500 text-xl leading-relaxed">
                 {t('Best IT Solutions')}
               </h4>
               <h2
                 data-aos="fade-up"
-                className="mt-6 font-bold text-3xl lg:text-5xl"
+                className="mt-6 font-bold text-3xl lg:text-5xl leading-snug lg:leading-tight"
               >
                 {t('We Prominent Truly IT Your solutions')}
               </h2>

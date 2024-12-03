@@ -57,7 +57,7 @@ function TeamComponent() {
       </h4>
       <h2
         data-aos="fade-up"
-        className="mt-2 2xl:mt-4 mb-14 font-bold text-2xl text-center xl:text-3xl 2xl:text-5xl"
+        className="mt-2 2xl:mt-4 mb-14 font-bold text-2xl text-center xl:text-3xl 2xl:text-5xl leading-snug lg:leading-tight"
       >
         {t('Weve an Exclusive Team Meet our Professionals')}
       </h2>
