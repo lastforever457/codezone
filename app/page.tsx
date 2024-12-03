@@ -36,10 +36,6 @@ const TeamComponent = dynamic(() => import('@/components/main/team'), {
 });
 
 const Page = () => {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
