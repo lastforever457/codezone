@@ -15,7 +15,9 @@ const CardComponent = dynamic(
 const Contact = dynamic(() => import('@/components/main/contact'), {
   ssr: false,
 });
-const MainSection = dynamic(() => import('@/components/main/main-section'));
+const MainSection = dynamic(() => import('@/components/main/main-section'), {
+  ssr: false,
+});
 const ModernTechnologies = dynamic(
   () => import('@/components/main/modern-technologies'),
   { ssr: false }
@@ -34,22 +36,29 @@ const TeamComponent = dynamic(() => import('@/components/main/team'), {
 });
 
 const Page = () => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      AOS.init({ duration: 1000 });
-    }
-  }, []);
+  if (typeof window === 'undefined') {
+    return null;
+  }
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
-    <main>
-      <MainSection />
-      <ModernTechnologies />
+    <div className="">
+      <Header />
+      <div className="">
+        <MainSection />
+      </div>
+      <SwiperLeft />
+      <CardComponent />
       <Service />
-      <Provide />
       <TeamComponent />
+      <ModernTechnologies />
+      <Provide />
       <Blog />
       <Contact />
-    </main>
+      <Footer />
+    </div>
   );
 };
 

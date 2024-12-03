@@ -3,21 +3,15 @@
 import { ReactNode } from 'react';
 import '../i18n/i18n';
 import './globals.css';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
