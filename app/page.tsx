@@ -15,9 +15,7 @@ const CardComponent = dynamic(
 const Contact = dynamic(() => import('@/components/main/contact'), {
   ssr: false,
 });
-const MainSection = dynamic(() => import('@/components/main/main-section'), {
-  ssr: false,
-});
+const MainSection = dynamic(() => import('@/components/main/main-section'));
 const ModernTechnologies = dynamic(
   () => import('@/components/main/modern-technologies'),
   { ssr: false }
@@ -36,6 +34,10 @@ const TeamComponent = dynamic(() => import('@/components/main/team'), {
 });
 
 const Page = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
