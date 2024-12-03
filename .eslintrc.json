@@ -14,14 +14,7 @@
         "ignoreRestSiblings": false
       }
     ],
-    "@typescript-eslint/no-explicit-any": "off",
-    "import/order": "off",
-    "import/no-unused-modules": [
-      "error",
-      {
-        "unusedExports": true
-      }
-    ]
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "react": {
